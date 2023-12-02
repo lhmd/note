@@ -1,0 +1,1628 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>CS106L Midquarter Review - 罹魂梦蝶の笔记空间</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.9647289d.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hiragino+Sans+GB:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Hiragino Sans GB";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../from_oi_wiki/css/extra.css?v=13">
+    
+      <link rel="stylesheet" href="../../../css/status.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#stream" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="罹魂梦蝶の笔记空间" class="md-header__button md-logo" aria-label="罹魂梦蝶の笔记空间" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            罹魂梦蝶の笔记空间
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CS106L Midquarter Review
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        主页
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%AF%BC%E8%AE%BA/" class="md-tabs__link md-tabs__link--active">
+        CS 课程
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/NeRF/" class="md-tabs__link">
+        论文阅读
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../%E6%9D%82%E9%A1%B9/11-25%E7%AD%BE%E5%88%B0%E6%8E%A8/" class="md-tabs__link">
+        杂项
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="罹魂梦蝶の笔记空间" class="md-nav__button md-logo" aria-label="罹魂梦蝶の笔记空间" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    罹魂梦蝶の笔记空间
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../..">主页</a>
+          
+            <label for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="主页" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          主页
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        关于我
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          CS 课程
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CS 课程" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          CS 课程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          计算机视觉导论
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="计算机视觉导论" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          计算机视觉导论
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%AF%BC%E8%AE%BA/" class="md-nav__link">
+        计算机视觉导论
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          CS106L
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CS106L" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          CS106L
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CS106L%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        CS106L课程笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          期中复习
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        期中复习
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stream" class="md-nav__link">
+    stream
+  </a>
+  
+    <nav class="md-nav" aria-label="stream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output-streams" class="md-nav__link">
+    Output Streams
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-file-streams" class="md-nav__link">
+    Output File Streams
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-streams" class="md-nav__link">
+    Input Streams
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nitty-gritty-details-stdcin" class="md-nav__link">
+    Nitty Gritty Details: std::cin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stringstreams" class="md-nav__link">
+    Stringstreams
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+    <nav class="md-nav" aria-label="References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#references-to-variables" class="md-nav__link">
+    References to variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-classic-reference-copy-bug" class="md-nav__link">
+    The classic reference-copy bug:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-classic-reference-rvalue-error" class="md-nav__link">
+    The classic reference-rvalue error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const-indicates-a-variable-cant-be-modified" class="md-nav__link">
+    const indicates a variable can’t be modified
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const--subtleties" class="md-nav__link">
+    const &amp; subtleties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containers-and-iterators" class="md-nav__link">
+    Containers and Iterators
+  </a>
+  
+    <nav class="md-nav" aria-label="Containers and Iterators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple--sequence-containers" class="md-nav__link">
+    Simple  Sequence Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-adaptors" class="md-nav__link">
+    Container Adaptors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#associative-containers" class="md-nav__link">
+    Associative Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stl-iterators" class="md-nav__link">
+    STL Iterators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#looping-over-collections" class="md-nav__link">
+    Looping over collections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointers" class="md-nav__link">
+    Pointers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    classes
+  </a>
+  
+    <nav class="md-nav" aria-label="classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sections" class="md-nav__link">
+    Sections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructors" class="md-nav__link">
+    Constructors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destructors" class="md-nav__link">
+    Destructors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-classes" class="md-nav__link">
+    Template classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#member-types" class="md-nav__link">
+    Member Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recap" class="md-nav__link">
+    Recap
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          论文阅读
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="论文阅读" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          论文阅读
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/NeRF/" class="md-nav__link">
+        NeRF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Depth-Gaussian/" class="md-nav__link">
+        Depth-Gaussian
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          杂项
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="杂项" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          杂项
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%9D%82%E9%A1%B9/11-25%E7%AD%BE%E5%88%B0%E6%8E%A8/" class="md-nav__link">
+        11/25签到推
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%9D%82%E9%A1%B9/code-before-this-website/" class="md-nav__link">
+        code before this website
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%9D%82%E9%A1%B9/Complete-Binary-Search-Tree/" class="md-nav__link">
+        Complete Binary Search Tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%9D%82%E9%A1%B9/%E4%B8%93%E4%B8%9A%E5%88%86%E6%B5%81%E5%86%85%E8%AE%AD/" class="md-nav__link">
+        专业分流内训
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stream" class="md-nav__link">
+    stream
+  </a>
+  
+    <nav class="md-nav" aria-label="stream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output-streams" class="md-nav__link">
+    Output Streams
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-file-streams" class="md-nav__link">
+    Output File Streams
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-streams" class="md-nav__link">
+    Input Streams
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nitty-gritty-details-stdcin" class="md-nav__link">
+    Nitty Gritty Details: std::cin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stringstreams" class="md-nav__link">
+    Stringstreams
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+    <nav class="md-nav" aria-label="References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#references-to-variables" class="md-nav__link">
+    References to variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-classic-reference-copy-bug" class="md-nav__link">
+    The classic reference-copy bug:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-classic-reference-rvalue-error" class="md-nav__link">
+    The classic reference-rvalue error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const-indicates-a-variable-cant-be-modified" class="md-nav__link">
+    const indicates a variable can’t be modified
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const--subtleties" class="md-nav__link">
+    const &amp; subtleties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containers-and-iterators" class="md-nav__link">
+    Containers and Iterators
+  </a>
+  
+    <nav class="md-nav" aria-label="Containers and Iterators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple--sequence-containers" class="md-nav__link">
+    Simple  Sequence Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-adaptors" class="md-nav__link">
+    Container Adaptors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#associative-containers" class="md-nav__link">
+    Associative Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stl-iterators" class="md-nav__link">
+    STL Iterators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#looping-over-collections" class="md-nav__link">
+    Looping over collections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointers" class="md-nav__link">
+    Pointers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    classes
+  </a>
+  
+    <nav class="md-nav" aria-label="classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sections" class="md-nav__link">
+    Sections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructors" class="md-nav__link">
+    Constructors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destructors" class="md-nav__link">
+    Destructors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-classes" class="md-nav__link">
+    Template classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#member-types" class="md-nav__link">
+    Member Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recap" class="md-nav__link">
+    Recap
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>期中复习</h1>
+
+<p>Midquarter review of Stanford CS106L.</p>
+<!--more-->
+
+<h2 id="stream">stream<a class="headerlink" href="#stream" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>stream: an abstraction for input/output. Streams  convert between data and the string representation of data.</p>
+</blockquote>
+<h3 id="output-streams">Output Streams<a class="headerlink" href="#output-streams" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Have type <code>std::ostream</code></li>
+<li>Can only send data using the <code>&lt;&lt;</code> operator</li>
+<li>Converts any type into string and sends it to the stream</li>
+<li><code>std::cout</code> is the output stream that goes to the console</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span>
+<span class="c1">// converts int value 5 to string “5”</span>
+<span class="c1">// sends “5” to the console output stream</span>
+</code></pre></div>
+<h3 id="output-file-streams">Output File Streams<a class="headerlink" href="#output-file-streams" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Have type <code>std::ofstream</code></li>
+<li>Only receive data using the <code>&lt;&lt;</code> operator</li>
+<li>Converts data of any type into a string and sends it to the  file stream</li>
+<li>Must initialize your own <code>ofstream</code> object linked to your file</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="w"> </span><span class="nf">out</span><span class="p">(</span><span class="err">“</span><span class="n">out</span><span class="p">.</span><span class="n">txt</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="o">::</span><span class="n">out</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// out is now an ofstream that outputs to out.txt</span>
+<span class="n">out</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// out.txt contains 5</span>
+</code></pre></div>
+<h3 id="input-streams">Input Streams<a class="headerlink" href="#input-streams" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Have type <code>std::istream</code></li>
+<li>Can only receive data using the <code>&gt;&gt;</code> operator</li>
+<li>Receives a string from the stream and converts it to data</li>
+<li><code>std::cin</code> is the output stream that gets input from the console</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
+<span class="n">string</span><span class="w"> </span><span class="n">str</span><span class="p">;</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">str</span><span class="p">;</span><span class="w"></span>
+<span class="c1">//reads exactly one int then 1 string from console</span>
+</code></pre></div>
+<h3 id="nitty-gritty-details-stdcin">Nitty Gritty Details: std::cin<a class="headerlink" href="#nitty-gritty-details-stdcin" title="Permanent link">&para;</a></h3>
+<ul>
+<li>First call to std::cin &gt;&gt; creates a command line prompt  that allows the user to type until they hit enter</li>
+<li>Each &gt;&gt; ONLY reads until the next whitespace</li>
+<li>Whitespace = tab, space, newline</li>
+<li>Everything after the first whitespace gets saved and used the  next time std::cin &gt;&gt; is called</li>
+<li>The place its saved is called a buffer!</li>
+<li>If there is nothing waiting in the buffer, std::cin &gt;&gt; creates a new command line prompt</li>
+<li>Whitespace is eaten: it won’t show up in output</li>
+</ul>
+<h3 id="stringstreams">Stringstreams<a class="headerlink" href="#stringstreams" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Input stream: std::istringstream</li>
+<li>Give any data type to the istringstream, it’ll store it as a  string!</li>
+<li>Output stream: std::ostringstream</li>
+<li>Make an ostringstream out of a string, read from it  word/type by word/type!</li>
+<li>The same as the other i/ostreams you’ve seen</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">//ostringstreams</span>
+<span class="n">string</span><span class="w"> </span><span class="nf">judgementCall</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">lovesCpp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">ostringstream</span><span class="w"> </span><span class="n">formatter</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">formatter</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="s">&quot;, age &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">age</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">lovesCpp</span><span class="p">)</span><span class="w"> </span><span class="n">formatter</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, rocks.&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="n">formatter</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; could be better&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">formatter</span><span class="p">.</span><span class="n">str</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="c1">//istringstreams</span>
+<span class="n">Student</span><span class="w"> </span><span class="nf">reverseJudgementCall</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">judgement</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">istringstream</span><span class="w"> </span><span class="n">converter</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">fluff</span><span class="p">;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">lovesCpp</span><span class="p">;</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">converter</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">converter</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">fluff</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">converter</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">age</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">converter</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">fluff</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">cool</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">converter</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">cool</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">fluff</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;rocks&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Student</span><span class="p">{</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bliss&quot;</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Student</span><span class="p">{</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;misery&quot;</span><span class="p">};</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<h3 id="references-to-variables">References to variables<a class="headerlink" href="#references-to-variables" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">original</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">};</span><span class="w"></span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">copy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">original</span><span class="p">;</span><span class="w"></span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">original</span><span class="p">;</span><span class="w"></span>
+<span class="n">original</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="n">copy</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="n">ref</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">original</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// {1, 2, 3, 5}</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">copy</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// {1, 2, 4}</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ref</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// {1, 2, 3, 5}</span>
+</code></pre></div>
+<h3 id="the-classic-reference-copy-bug">The classic reference-copy bug:<a class="headerlink" href="#the-classic-reference-copy-bug" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">shift</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="p">[</span><span class="n">num1</span><span class="p">,</span><span class="w"> </span><span class="n">num2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="c1">//This creates a copy of the course</span>
+<span class="w">        </span><span class="n">num1</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">num2</span><span class="o">++</span><span class="p">;</span><span class="c1">//This is updating that same copy!</span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1">//The classic reference-copy bug, fixed:</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">shift</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">num1</span><span class="p">,</span><span class="w"> </span><span class="n">num2</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">num1</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">num2</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="the-classic-reference-rvalue-error">The classic reference-rvalue error<a class="headerlink" href="#the-classic-reference-rvalue-error" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">shift</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">num1</span><span class="p">,</span><span class="w"> </span><span class="n">num2</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">num1</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">num2</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="n">shift</span><span class="p">({{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">}});</span><span class="w"> </span>
+<span class="c1">// {{1, 1}} is an rvalue, it can’t be referenced</span>
+</code></pre></div>
+<ul>
+<li>l-values</li>
+<li>l-values can appear on the left or  right of an =</li>
+<li><code>x</code> is an l-value</li>
+<li>l-values have names</li>
+<li>l-values are not temporary</li>
+<li>r-values</li>
+<li>r-values can ONLY appear on the  right of an =</li>
+<li><code>3</code> is an r-value</li>
+<li>r-values don’t have names</li>
+<li>r-values are temporary</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">//The classic reference-rvalue error, fixed</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">shift</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">num1</span><span class="p">,</span><span class="w"> </span><span class="n">num2</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">num1</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">num2</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">my_nums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">}};</span><span class="w"></span>
+<span class="n">shift</span><span class="p">(</span><span class="n">my_nums</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h3 id="const-indicates-a-variable-cant-be-modified">const indicates a variable can’t be modified<a class="headerlink" href="#const-indicates-a-variable-cant-be-modified" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">c_vec</span><span class="p">{</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">};</span><span class="w"> </span><span class="c1">// a const variable</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="p">;</span><span class="w"> </span><span class="c1">// a regular reference</span>
+<span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">c_ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="p">;</span><span class="w"> </span><span class="c1">// a const reference</span>
+<span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// OKAY</span>
+<span class="n">c_vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// BAD - const</span>
+<span class="n">ref</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// OKAY</span>
+<span class="n">c_ref</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// BAD - const</span>
+</code></pre></div>
+<h3 id="const--subtleties">const &amp; subtleties<a class="headerlink" href="#const--subtleties" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">c_vec</span><span class="p">{</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">};</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">c_ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="p">;</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">copy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c_ref</span><span class="p">;</span><span class="w"> </span><span class="c1">// a non-const copy</span>
+<span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">copy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c_ref</span><span class="p">;</span><span class="w"> </span><span class="c1">// a const copy</span>
+<span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ref</span><span class="p">;</span><span class="w"> </span><span class="c1">// a non-const reference</span>
+<span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c_aref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ref</span><span class="p">;</span><span class="w"> </span><span class="c1">// a const reference</span>
+</code></pre></div>
+<h2 id="containers-and-iterators">Containers and Iterators<a class="headerlink" href="#containers-and-iterators" title="Permanent link">&para;</a></h2>
+<h3 id="simple--sequence-containers">Simple  Sequence Containers<a class="headerlink" href="#simple--sequence-containers" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>graph TB
+A[Sequence Containers]--&gt;B[Simple]
+A--&gt;C[Adaptors]
+B--&gt;d[vector]
+B--&gt;e[deque]
+B--&gt;f[list]
+B--&gt;q[tuple]
+C--&gt;p[stack]
+C--&gt;o[queue]
+C--&gt;m[priority_queue]</code></pre>
+<pre class="mermaid"><code>graph TB
+A[Associative Containers]--&gt;B[Ordered]
+A--&gt;C[Unordered]
+B--&gt;set
+B--&gt;map
+C--&gt;unordered_set
+C--&gt;unordered_map</code></pre>
+<table>
+<thead>
+<tr>
+<th>What you want to do</th>
+<th>std::vector</th>
+<th>std::deque</th>
+<th>std::list</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Insert/remove in the front</td>
+<td>Slow</td>
+<td>Fast</td>
+<td>Fast</td>
+</tr>
+<tr>
+<td><strong>Insert/remove in the back</strong></td>
+<td>Super Fast</td>
+<td>Very Fast</td>
+<td>Fast</td>
+</tr>
+<tr>
+<td><strong>Indexed Access</strong></td>
+<td>Super Fast</td>
+<td>Fast</td>
+<td>Impossible</td>
+</tr>
+<tr>
+<td>Insert/remove in the middle</td>
+<td>Slow</td>
+<td>Fast</td>
+<td>Very Fast</td>
+</tr>
+<tr>
+<td>Memory usage</td>
+<td>Low</td>
+<td>High</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Combining (splicing/joining)</td>
+<td>Slow</td>
+<td>Very Slow</td>
+<td>Fast</td>
+</tr>
+<tr>
+<td>Stability (iterators/concurrency)</td>
+<td>Bad</td>
+<td>Very Bad</td>
+<td>Good</td>
+</tr>
+</tbody>
+</table>
+<h3 id="container-adaptors">Container Adaptors<a class="headerlink" href="#container-adaptors" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>What is a container adaptor? <code>std::stack and std::queue</code></p>
+</blockquote>
+<p>Container adaptors are wrappers in C++</p>
+<ul>
+<li>Container adaptors provide a different interface for sequence containers. </li>
+<li>You can choose what the underlying container is</li>
+<li>For instance, let’s choose a deque as our underlying container, and let’s implement a  queue</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stack_deque</span><span class="p">;</span><span class="w"> </span><span class="c1">// Container = std::deque</span>
+<span class="n">std</span><span class="o">::</span><span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">stack_list</span><span class="p">;</span><span class="c1">// Container = std::list</span>
+</code></pre></div>
+<h3 id="associative-containers">Associative Containers<a class="headerlink" href="#associative-containers" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">//set</span>
+<span class="n">std</span><span class="o">::</span><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="c1">//Create an empty set</span>
+<span class="n">s</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">k</span><span class="p">);</span><span class="c1">//Add a value k to the set</span>
+<span class="n">s</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">k</span><span class="p">);</span><span class="c1">//Remove value k from the set</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">k</span><span class="p">))...</span><span class="c1">//Check if a value k is in the set</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">empty</span><span class="p">())...</span><span class="c1">//Check if vector is empty</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">//map</span>
+<span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="c1">//Create an empty map</span>
+<span class="n">m</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">});</span><span class="w"></span>
+<span class="n">m</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">;</span><span class="c1">//Add key k with value v into the map</span>
+<span class="n">m</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">k</span><span class="p">);</span><span class="c1">//Remove key k from the map</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">k</span><span class="p">))</span><span class="w"> </span><span class="p">...</span><span class="c1">//Check if key k is in the map</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">...</span><span class="c1">//Check if the map is empty</span>
+<span class="c1">//Retrieve or overwrite value associated with key k (error if key isn’t in map)</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">k</span><span class="p">);</span><span class="w"></span>
+<span class="n">m</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">;</span><span class="w"></span>
+<span class="c1">//Retrieve or overwrite value associated with key k (auto-insert if key isn’t in map)</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="p">[</span><span class="n">k</span><span class="p">];</span><span class="w"></span>
+<span class="n">m</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="stl-iterators">STL Iterators<a class="headerlink" href="#stl-iterators" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Iterators are objects that point to elements inside containers.</li>
+<li>Each STL container has its own iterator, but all of these iterators exhibit a similar  behavior!</li>
+<li>Generally, STL iterators support the following operations:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">set</span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">};</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">set</span><span class="o">::</span><span class="n">iterator</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="c1">// at 0</span>
+<span class="o">++</span><span class="n">iter</span><span class="p">;</span><span class="w"> </span><span class="c1">// at 1</span>
+<span class="o">*</span><span class="n">iter</span><span class="p">;</span><span class="w"> </span><span class="c1">// 1</span>
+<span class="p">(</span><span class="n">iter</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">end</span><span class="p">());</span><span class="w"> </span><span class="c1">// can compare </span>
+<span class="n">iterator</span><span class="w"> </span><span class="n">equality</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">second_iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iter</span><span class="p">;</span><span class="w"> </span><span class="c1">// &quot;copy construction&quot;</span>
+</code></pre></div>
+<p>Why ++iter and not iter++?</p>
+<p><strong>Answer</strong>: ++iter returns the value after being incremented! iter++ returns the previous value and then increments it. (wastes  just a bit of time)</p>
+<h3 id="looping-over-collections">Looping over collections<a class="headerlink" href="#looping-over-collections" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">//初始</span>
+<span class="n">std</span><span class="o">::</span><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">set</span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">};</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">set</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">set</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">iter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">elem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">iter</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">elem</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">}};</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">map</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">iter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">iter</span><span class="p">;</span><span class="w"> </span><span class="c1">// structured binding!</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="c1">//改进</span>
+<span class="n">std</span><span class="o">::</span><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">set</span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">};</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">elem</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">set</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">elem</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">}};</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">map</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="pointers">Pointers<a class="headerlink" href="#pointers" title="Permanent link">&para;</a></h3>
+<ul>
+<li>When variables are created, they're given  an address in memory.</li>
+<li>Pointers are objects that store an address  and type of a variable.</li>
+</ul>
+<h2 id="classes">classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>A programmerdefined custom type. An  abstraction of an object or data type.</p>
+</blockquote>
+<h3 id="sections">Sections<a class="headerlink" href="#sections" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Public section:</li>
+<li>Users of the Student object can  directly access anything here!</li>
+<li>Defines interface for interacting with  the private member variables</li>
+<li>Private section:</li>
+<li>Usually contains all member  variables</li>
+<li>Users can’t access or modify  anything in the private section</li>
+</ul>
+<h3 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Define how the member variables of an object is initialized</li>
+<li>What gets called when you first create a Student object</li>
+<li>Overloadable</li>
+</ul>
+<h3 id="destructors">Destructors<a class="headerlink" href="#destructors" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Arrays are memory WE allocate, so we need to give instructions for when to  deallocate that memory!</li>
+<li>When we are done using our array, we need to <code>delete []</code> it!</li>
+</ul>
+<h3 id="template-classes">Template classes<a class="headerlink" href="#template-classes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">//mypair.cpp</span>
+<span class="cp">#include “mypair.h”</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">First</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">Second</span><span class="o">&gt;</span><span class="w"></span>
+<span class="n">First</span><span class="w"> </span><span class="n">MyPair</span><span class="o">&lt;</span><span class="n">First</span><span class="p">,</span><span class="w"> </span><span class="n">Second</span><span class="o">&gt;::</span><span class="n">getFirst</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">first</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">Second</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">First</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="n">Second</span><span class="w"> </span><span class="n">MyPair</span><span class="o">&lt;</span><span class="n">First</span><span class="p">,</span><span class="w"> </span><span class="n">Second</span><span class="o">&gt;::</span><span class="n">getSecond</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">second</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="member-types">Member Types<a class="headerlink" href="#member-types" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sometimes, we need a name for a type that is dependent on  our template types</li>
+<li>iterator is a member type of vector</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">//vector.h</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">vector</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">iterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">…</span><span class="w"> </span><span class="c1">// something internal</span>
+<span class="w">    </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">iterator</span><span class="w"> </span><span class="n">front</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="c1">//vector.cpp</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">typename</span><span class="w"> </span><span class="nc">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">insert</span><span class="p">(</span><span class="n">iterator</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="n">intvalue</span><span class="p">)</span><span class="w"> </span><span class="p">{...}</span><span class="w"></span>
+<span class="c1">//iterator is a nested type in namespace vector&lt;T&gt;::</span>
+</code></pre></div>
+<p><strong>Aside: Type Aliases</strong></p>
+<ul>
+<li>You can use using type_name = type in application  code as well!</li>
+<li>When using it in a class interface, it defines a nested type, like  vector::iterator</li>
+<li>When using it in application code, like main.cpp, it just creates another name for type within that scope (until the  next unmatched })</li>
+</ul>
+<p><strong>Summary</strong></p>
+<ul>
+<li>Used to make sure your clients have a standardized way to  access important types</li>
+<li>Lives in your namespace: <code>vector&lt;T&gt;::iterator</code></li>
+<li>After class specifier, you can use the alias directly (e.g. inside  function arguments, inside function body)</li>
+<li>Before class specifier, use typename.</li>
+</ul>
+<h3 id="recap">Recap<a class="headerlink" href="#recap" title="Permanent link">&para;</a></h3>
+<p><strong>Template classes</strong></p>
+<ul>
+<li>Add <code>template&lt;typename T1, typename T2 ...&gt;</code> before class definition in .h</li>
+<li>Add <code>template&lt;typename T1, typename T2 ...&gt;</code> before all  function signature in .cpp</li>
+<li>When returning nested types (like iterator types), put <code>template&lt;typename T1, typename T2 ...&gt;::member_type</code> as return type, not  just <code>member_type</code></li>
+<li>Templates don’t emit code until instantiated, so <code>#include</code> the  .cpp file in the .h file, not the other way around</li>
+</ul>
+<p><strong>Const and Const-correctness</strong></p>
+<ul>
+<li>Use const parameters and variables wherever you can in application code</li>
+<li>Every member function of a class that doesn’t change its member variables should be marked <code>const</code></li>
+<li>auto will drop all const and &amp;, so be sure to specify</li>
+<li>Make iterators and const_iterators for all your classes!</li>
+<li><strong>const iterator</strong> = cannot increment the iterator, can dereference and change underlying value</li>
+<li><strong>const_iterator</strong> = can increment the iterator, cannot dereference and change underlying value</li>
+<li><strong>const const_iterator</strong> = cannot increment iterator, cannot dereference and change underlying value</li>
+</ul>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="../CS106L%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="md-footer__link md-footer__link--prev" aria-label="上一页: CS106L课程笔记" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              CS106L课程笔记
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/NeRF/" class="md-footer__link md-footer__link--next" aria-label="下一页: NeRF" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              NeRF
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      本页面的全部内容在 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh">CC BY-SA 4.0</a> 和 <a href="https://github.com/zTrix/sata-license">SATA</a> 协议之条款下提供，附加条款亦可能应用。
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "content.code.annotate", "navigation.tracking", "navigation.indexes", "navigation.top", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+        <script src="../../../from_oi_wiki/js/extra.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+    
+  </body>
+</html>
