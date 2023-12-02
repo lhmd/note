@@ -11,13 +11,14 @@ nav:
   # - 基础课程:
   - 论文阅读:
     - NeRF: 论文阅读/NeRF.md
+    - Depth-Gaussian: 论文阅读/Depth-Gaussian.md
   - 杂项:
     - 杂项/11-25签到推.md
     - 杂项/code-before-this-website.md
     - 杂项/Complete-Binary-Search-Tree.md
     - 杂项/专业分流内训.md
 
-site_name: lhmd的代码空间
+site_name: 罹魂梦蝶の笔记空间
 # site_url: https://zhang-each.github.io/My-CS-notebook/
 # repo_name: Zhang-Each/My-CS-notebook
 # repo_url: https://github.com/zhang-each/My-CS-notebook/
