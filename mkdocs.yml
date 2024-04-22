@@ -22,10 +22,9 @@ nav:
       - Human Motion Generation Survey: 论文阅读/motion/Human-Motion-Generation-A-Survey.md
 
   - 杂项:
-    - 杂项/11-25签到推.md
-    - 杂项/code-before-this-website.md
-    - 杂项/Complete-Binary-Search-Tree.md
-    - 杂项/专业分流内训.md
+    - 杂项/index.md
+    - AI绘图: 杂项/11-25签到推.md
+    - 本科专业分流: 杂项/专业分流内训.md
 
 site_name: 罹魂梦蝶の笔记空间
 # site_url: https://zhang-each.github.io/My-CS-notebook/
