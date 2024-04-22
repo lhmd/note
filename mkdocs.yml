@@ -3,6 +3,7 @@ nav:
     - index.md
     - 关于我: about.md
   - CS 课程:
+    - 简介: CS课程/index.md
     - 计算机视觉导论:
       - 课程笔记: CS课程/计算机视觉导论.md
     - CS106L:
