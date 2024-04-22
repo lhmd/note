@@ -4,14 +4,21 @@ nav:
     - 关于我: about.md
   - CS 课程:
     - 计算机视觉导论:
-      - CS课程/计算机视觉导论.md
+      - 课程笔记: CS课程/计算机视觉导论.md
     - CS106L:
-      - CS课程/CS106L/CS106L课程笔记.md
+      - 课程笔记: CS课程/CS106L/CS106L课程笔记.md
       - 期中复习: CS课程/CS106L/CS106L-Midquarter-Review.md
-  # - 基础课程:
   - 论文阅读:
-    - NeRF: 论文阅读/NeRF.md
-    - Depth-Gaussian: 论文阅读/Depth-Gaussian.md
+    - 3D Reconstruction:
+      - NeRF: 论文阅读/reconstruction/NeRF.md
+      - Depth-Gaussian: 论文阅读/reconstruction/Depth-Gaussian.md
+    - Human Motion Generation:
+      - Generating Continual Human Motion in Diverse 3D Scenes: 论文阅读/motion/Generating-Continual-Human-Motion-in-Diverse-3D-Scenes.md
+      - TeSMo: 论文阅读/motion/Generating Human Interaction Motions in Scenes with Text Control.md
+      - Generating Human Motion in 3D Scenes from Text Descriptions: 论文阅读/motion/Generating-Human-Motion-in-3D-Scenes-from-Text-Descriptions.md
+      - GPT-Connect: 论文阅读/motion/GPT-Connect.md
+      - Human Motion Generation Survey: 论文阅读/motion/Human-Motion-Generation-A-Survey.md
+
   - 杂项:
     - 杂项/11-25签到推.md
     - 杂项/code-before-this-website.md
