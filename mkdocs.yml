@@ -3,13 +3,14 @@ nav:
     - index.md
     - 关于我: about.md
   - CS 课程:
-    - 简介: CS课程/index.md
+    - CS课程/index.md
     - 计算机视觉导论:
       - 课程笔记: CS课程/计算机视觉导论.md
     - CS106L:
       - 课程笔记: CS课程/CS106L/CS106L课程笔记.md
       - 期中复习: CS课程/CS106L/CS106L-Midquarter-Review.md
   - 论文阅读:
+    - 论文阅读/index.md
     - 3D Reconstruction:
       - NeRF: 论文阅读/reconstruction/NeRF.md
       - Depth-Gaussian: 论文阅读/reconstruction/Depth-Gaussian.md
