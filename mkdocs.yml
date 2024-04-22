@@ -15,11 +15,11 @@ nav:
       - NeRF: 论文阅读/reconstruction/NeRF.md
       - Depth-Gaussian: 论文阅读/reconstruction/Depth-Gaussian.md
     - Human Motion Generation:
-      - Generating Continual Human Motion in Diverse 3D Scenes: 论文阅读/motion/Generating-Continual-Human-Motion-in-Diverse-3D-Scenes.md
+      - Generating Continual Human Motion in Diverse 3D Scenes: 论文阅读/motion/Generating Continual Human Motion in Diverse 3D Scenes.md
       - TeSMo: 论文阅读/motion/Generating Human Interaction Motions in Scenes with Text Control.md
-      - Generating Human Motion in 3D Scenes from Text Descriptions: 论文阅读/motion/Generating-Human-Motion-in-3D-Scenes-from-Text-Descriptions.md
+      - Generating Human Motion in 3D Scenes from Text Descriptions: 论文阅读/motion/Generating Human Motion in 3D Scenes from Text Descriptions.md
       - GPT-Connect: 论文阅读/motion/GPT-Connect.md
-      - Human Motion Generation Survey: 论文阅读/motion/Human-Motion-Generation-A-Survey.md
+      - Human Motion Generation Survey: 论文阅读/motion/Human Motion Generation A Survey.md
 
   - 杂项:
     - 杂项/index.md
@@ -73,7 +73,7 @@ markdown_extensions:
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.highlight
   - pymdownx.inlinehilite
