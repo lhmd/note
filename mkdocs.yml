@@ -49,7 +49,7 @@ theme:
     scheme: default
   font:
     text: Hiragino Sans GB # Palatino
-    code: Roboto Mono
+    code: Roboto Mono在·
   # custom_dir: overrides # 用来搞评论的，参考 https://squidfunk.github.io/mkdocs-material/setup/adding-a-comment-system/
 
 
