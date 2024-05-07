@@ -1,0 +1,5681 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../CS106L/CS106L%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+    
+    
+      
+        <title>计算机视觉导论 - 罹魂梦蝶の笔记空间</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hiragino+Sans+GB:300,300i,400,400i,700,700i%7CRoboto+Mono在·:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Hiragino Sans GB";--md-code-font:"Roboto Mono在·"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../from_oi_wiki/css/extra.css?v=13">
+    
+      <link rel="stylesheet" href="../../css/status.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lec-1-introduction" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="罹魂梦蝶の笔记空间" class="md-header__button md-logo" aria-label="罹魂梦蝶の笔记空间" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            罹魂梦蝶の笔记空间
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              计算机视觉导论
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+    
+  
+  主页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  CS 课程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" class="md-tabs__link">
+          
+  
+    
+  
+  论文阅读
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E6%9D%82%E9%A1%B9/" class="md-tabs__link">
+          
+  
+    
+  
+  杂项
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="罹魂梦蝶の笔记空间" class="md-nav__button md-logo" aria-label="罹魂梦蝶の笔记空间" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    罹魂梦蝶の笔记空间
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    主页
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            主页
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    关于我
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    CS 课程
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            CS 课程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    计算机视觉导论
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            计算机视觉导论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    课程笔记
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    课程笔记
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lec-1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 1 Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 1 Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cv主要任务" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 CV主要任务：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-review-of-linear-algebra" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Review of Linear Algebra
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-2-image-formation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 2 Image formation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 2 Image formation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-camera-and-lens" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Camera and lens
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Camera and lens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pinhole-camera" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pinhole camera
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lens
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-geometric-image-formation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Geometric image formation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Geometric image formation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pinhole-camera-model-perspective-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pinhole camera model: Perspective Projection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#homogeneous-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homogeneous coordinates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perspective-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perspective Projection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orthographic-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Orthographic projection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-photometric-image-formation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Photometric image formation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Photometric image formation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shutter-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shutter speed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rolling-shutter-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rolling shutter effect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color spaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color-sensing-bayer-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Sensing: Bayer filter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-3-image-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 3 Image processing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 3 Image processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-image-processing-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Image processing basics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Image processing basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convolution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2d-convolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      2D convolution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discrete-2d-convolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discrete 2D convolution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Padding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blur
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharpen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sharpen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradient-detection-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradient detection filter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bilateral-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bilateral filter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-image-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Image sampling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Image sampling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reducing-image-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reducing image size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aliasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aliasing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anti-aliasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anti-aliasing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fourier-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fourier Transform
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-image-magnification" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Image magnification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Image magnification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpolation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seam-carving" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seam Carving
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-4-model-fitting-and-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 4 Model Fitting and Optimization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 4 Model Fitting and Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Optimization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-fitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model fitting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-numerical-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Numerical methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Numerical methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#梯度下降法迭代法的一种" class="md-nav__link">
+    <span class="md-ellipsis">
+      梯度下降法：迭代法的一种
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newton-method见数值分析课程" class="md-nav__link">
+    <span class="md-ellipsis">
+      Newton method：见数值分析课程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#高斯-牛顿迭代" class="md-nav__link">
+    <span class="md-ellipsis">
+      高斯-牛顿迭代
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-robust-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Robust estimation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Robust estimation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#random-sample-concensus-ransac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random Sample Concensus (RANSAC)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Interpolation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-graphcut" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 Graphcut
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Graphcut">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#images-as-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Images as Graphs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalized-cut" class="md-nav__link">
+    <span class="md-ellipsis">
+      Normalized cut
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markov-random-field-mrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markov Random Field (MRF)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-5-image-matching-and-motion-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 5 Image Matching and Motion Estimation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 5 Image Matching and Motion Estimation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-image-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Image matching
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Image matching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blob-detector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blob detector
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matching
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-motion-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Motion estimation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Motion estimation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lucas-kanade-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lucas-Kanade Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-6-image-stitching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 6 Image stitching
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 6 Image stitching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-image-warping" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Image Warping
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Image Warping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-transformmation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Transformmation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#affine-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Affine Transformation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#projective-transformation-homography" class="md-nav__link">
+    <span class="md-ellipsis">
+      Projective Transformation (Homography)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dof" class="md-nav__link">
+    <span class="md-ellipsis">
+      DoF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forward-warping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forward Warping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverse-warping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inverse Warping
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-image-stitching" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Image Stitching
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-7-structure-from-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 7 Structure from Motion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 7 Structure from Motion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-camera-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Camera calibration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Camera calibration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#图像处理" class="md-nav__link">
+    <span class="md-ellipsis">
+      图像处理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pnp问题" class="md-nav__link">
+    <span class="md-ellipsis">
+      PnP问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PnP问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-linear-transform-dlt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direct Linear Transform (DLT)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p3p" class="md-nav__link">
+    <span class="md-ellipsis">
+      P3P
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#epnp" class="md-nav__link">
+    <span class="md-ellipsis">
+      EPnP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-two-frame-structure-from-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Two-frame structure from motion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-multi-frame-structure-from-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Multi-frame structure from motion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-a-modern-sfm-system-colmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 A modern SfM system: COLMAP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-8-depth-estimation-and-3d-reconstruction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 8 Depth estimation and 3D reconstruction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 8 Depth estimation and 3D reconstruction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-depth-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Depth estimation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Depth estimation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-stereo-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Stereo matching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-multi-view-stereo" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Multi-view stereo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3d-reconstruction" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 3D reconstruction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 3D reconstruction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-3d-representations" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 3D representations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-3d-surface-reconstruction" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 3D surface reconstruction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-texture-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Texture mapping
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-9-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 9 Deep Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 9 Deep Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Machine learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Machine learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#概念" class="md-nav__link">
+    <span class="md-ellipsis">
+      概念
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-linear-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Linear classifier
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Linear classifier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classification-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLassification model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear classifier
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loss-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loss function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-neural-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Neural networks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-convolutional-neural-networks--卷积神经网络" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Convolutional neural networks--卷积神经网络
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Convolutional neural networks--卷积神经网络">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convolution--local-connectivity--weight-sharing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convolution = local connectivity + weight sharing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#感受野receptive-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      感受野(Receptive fields)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#池化层pooling-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      池化层(Pooling layer)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#总体框架" class="md-nav__link">
+    <span class="md-ellipsis">
+      总体框架
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-training-neural-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 Training neural networks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Training neural networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#梯度下降训练cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      梯度下降训练CNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#反向传播" class="md-nav__link">
+    <span class="md-ellipsis">
+      反向传播
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#随机梯度下降法sgd" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机梯度下降法(SGD)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#超参数hyper-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      超参数(hyper-parameters)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#过拟合overfitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      过拟合(overfitting)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#批标准化batch-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      批标准化(Batch Normalization)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-network-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 Network architectures
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-10-recognition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 10 Recognition
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 10 Recognition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-semantic-segmentation语义分割" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Semantic segmentation(语义分割)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Semantic segmentation(语义分割)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#名词解释" class="md-nav__link">
+    <span class="md-ellipsis">
+      名词解释
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u-net" class="md-nav__link">
+    <span class="md-ellipsis">
+      U-Net
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deeplab" class="md-nav__link">
+    <span class="md-ellipsis">
+      DeepLab
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#评估指标" class="md-nav__link">
+    <span class="md-ellipsis">
+      评估指标
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-object-detection目标检测" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Object detection(目标检测)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Object detection(目标检测)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#单个物体检测" class="md-nav__link">
+    <span class="md-ellipsis">
+      单个物体检测
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#多个物体检测" class="md-nav__link">
+    <span class="md-ellipsis">
+      多个物体检测
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#滑动窗口" class="md-nav__link">
+    <span class="md-ellipsis">
+      滑动窗口
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#region-proposals候选区域" class="md-nav__link">
+    <span class="md-ellipsis">
+      Region proposals(候选区域)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      R-CNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fast-r-cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fast R-CNN:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rol-pool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rol Pool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      RPN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-instance-segmentation实例分割" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Instance segmentation(实例分割)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-human-pose-estimation人体姿态估计" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Human pose estimation(人体姿态估计)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-optical-flow光流" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 Optical flow(光流)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Optical flow(光流)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#光流场" class="md-nav__link">
+    <span class="md-ellipsis">
+      光流场：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flownet" class="md-nav__link">
+    <span class="md-ellipsis">
+      FlowNet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-other-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 Other tasks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-11-3d-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 11 3D Deep Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 11 3D Deep Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-feature-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Feature matching
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Feature matching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#super-polint-用于提取特征点" class="md-nav__link">
+    <span class="md-ellipsis">
+      Super Polint: 用于提取特征点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superglue-现在最好的检测方法" class="md-nav__link">
+    <span class="md-ellipsis">
+      SuperGlue: 现在最好的检测方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-object-pose-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Object Pose Estimation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-human-pose-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Human Pose Estimation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Human Pose Estimation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#markerless-mocap-相机照射关键点标记物在人身体上markless就是不用贴标记物" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markerless MoCap: 相机照射关键点，标记物在人身体上，Markless就是不用贴标记物
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monocular-3d-human-pose-estimation-参数化人体模型" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monocular 3D Human Pose Estimation: 参数化人体模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-depth-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Depth Estimation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-single-image-to-3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 Single Image to 3D
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Single Image to 3D">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monoculer-depth-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monoculer depth estimation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-view-shape-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single-view shape estimation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-pointnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 PointNet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-12-computational-photography-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 12 Computational Photography I
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 12 Computational Photography I">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-high-dynamic-range-imaging-hdr" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 High Dynamic Range Imaging (HDR)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 High Dynamic Range Imaging (HDR)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exposure曝光" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exposure:曝光
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Range
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hdr" class="md-nav__link">
+    <span class="md-ellipsis">
+      HDR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tone-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tone mapping
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-deblurring" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Deblurring
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Deblurring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reason
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modeling-image-blur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modeling Image Blur
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nbid" class="md-nav__link">
+    <span class="md-ellipsis">
+      NBID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bid" class="md-nav__link">
+    <span class="md-ellipsis">
+      BID
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-colorization黑白变彩色" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Colorization(黑白变彩色)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Colorization(黑白变彩色)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-based-colorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample-based colorization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-colorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive colorization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generative-adversarial-network-gan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generative Adversarial Network (GAN)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-super-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Super Resolution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-13-computational-photography-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 13 Computational Photography II
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 13 Computational Photography II">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-image-based-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Image-based Rendering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Image-based Rendering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#light-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Light Fields
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-plane-image-mpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Plane Image (MPI)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nerf" class="md-nav__link">
+    <span class="md-ellipsis">
+      NeRF
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-neural-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Neural Rendering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Neural Rendering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pose-transfer--garment-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pose Transfer &amp; Garment Transfer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CS106L
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            CS106L
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CS106L/CS106L%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    课程笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CS106L/CS106L-Midquarter-Review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    期中复习
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    论文阅读
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            论文阅读
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3D Reconstruction
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            3D Reconstruction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/reconstruction/NeRF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NeRF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/reconstruction/Depth-Gaussian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Depth-Gaussian
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Human Motion Generation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Human Motion Generation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/motion/Generating%20Continual%20Human%20Motion%20in%20Diverse%203D%20Scenes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generating Continual Human Motion in Diverse 3D Scenes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/motion/Generating%20Human%20Interaction%20Motions%20in%20Scenes%20with%20Text%20Control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TeSMo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/motion/Generating%20Human%20Motion%20in%203D%20Scenes%20from%20Text%20Descriptions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generating Human Motion in 3D Scenes from Text Descriptions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/motion/GPT-Connect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GPT-Connect
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/motion/Human%20Motion%20Generation%20A%20Survey/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Human Motion Generation Survey
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/motion/STMC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STMC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../%E6%9D%82%E9%A1%B9/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    杂项
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            杂项
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9D%82%E9%A1%B9/11-25%E7%AD%BE%E5%88%B0%E6%8E%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI绘图
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9D%82%E9%A1%B9/%E4%B8%93%E4%B8%9A%E5%88%86%E6%B5%81%E5%86%85%E8%AE%AD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    本科专业分流
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lec-1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 1 Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 1 Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cv主要任务" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 CV主要任务：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-review-of-linear-algebra" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Review of Linear Algebra
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-2-image-formation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 2 Image formation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 2 Image formation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-camera-and-lens" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Camera and lens
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Camera and lens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pinhole-camera" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pinhole camera
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lens
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-geometric-image-formation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Geometric image formation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Geometric image formation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pinhole-camera-model-perspective-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pinhole camera model: Perspective Projection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#homogeneous-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homogeneous coordinates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perspective-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perspective Projection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orthographic-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Orthographic projection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-photometric-image-formation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Photometric image formation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Photometric image formation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shutter-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shutter speed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rolling-shutter-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rolling shutter effect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color spaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color-sensing-bayer-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Sensing: Bayer filter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-3-image-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 3 Image processing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 3 Image processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-image-processing-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Image processing basics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Image processing basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convolution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2d-convolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      2D convolution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discrete-2d-convolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discrete 2D convolution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Padding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blur
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharpen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sharpen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradient-detection-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradient detection filter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bilateral-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bilateral filter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-image-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Image sampling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Image sampling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reducing-image-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reducing image size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aliasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aliasing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anti-aliasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anti-aliasing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fourier-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fourier Transform
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-image-magnification" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Image magnification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Image magnification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpolation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seam-carving" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seam Carving
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-4-model-fitting-and-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 4 Model Fitting and Optimization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 4 Model Fitting and Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Optimization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-fitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model fitting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-numerical-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Numerical methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Numerical methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#梯度下降法迭代法的一种" class="md-nav__link">
+    <span class="md-ellipsis">
+      梯度下降法：迭代法的一种
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newton-method见数值分析课程" class="md-nav__link">
+    <span class="md-ellipsis">
+      Newton method：见数值分析课程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#高斯-牛顿迭代" class="md-nav__link">
+    <span class="md-ellipsis">
+      高斯-牛顿迭代
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-robust-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Robust estimation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Robust estimation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#random-sample-concensus-ransac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random Sample Concensus (RANSAC)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Interpolation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-graphcut" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 Graphcut
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Graphcut">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#images-as-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Images as Graphs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalized-cut" class="md-nav__link">
+    <span class="md-ellipsis">
+      Normalized cut
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markov-random-field-mrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markov Random Field (MRF)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-5-image-matching-and-motion-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 5 Image Matching and Motion Estimation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 5 Image Matching and Motion Estimation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-image-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Image matching
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Image matching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blob-detector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blob detector
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matching
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-motion-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Motion estimation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Motion estimation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lucas-kanade-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lucas-Kanade Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-6-image-stitching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 6 Image stitching
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 6 Image stitching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-image-warping" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Image Warping
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Image Warping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-transformmation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Transformmation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#affine-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Affine Transformation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#projective-transformation-homography" class="md-nav__link">
+    <span class="md-ellipsis">
+      Projective Transformation (Homography)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dof" class="md-nav__link">
+    <span class="md-ellipsis">
+      DoF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forward-warping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forward Warping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverse-warping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inverse Warping
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-image-stitching" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Image Stitching
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-7-structure-from-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 7 Structure from Motion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 7 Structure from Motion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-camera-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Camera calibration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Camera calibration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#图像处理" class="md-nav__link">
+    <span class="md-ellipsis">
+      图像处理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pnp问题" class="md-nav__link">
+    <span class="md-ellipsis">
+      PnP问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PnP问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-linear-transform-dlt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direct Linear Transform (DLT)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p3p" class="md-nav__link">
+    <span class="md-ellipsis">
+      P3P
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#epnp" class="md-nav__link">
+    <span class="md-ellipsis">
+      EPnP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-two-frame-structure-from-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Two-frame structure from motion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-multi-frame-structure-from-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Multi-frame structure from motion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-a-modern-sfm-system-colmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 A modern SfM system: COLMAP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-8-depth-estimation-and-3d-reconstruction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 8 Depth estimation and 3D reconstruction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 8 Depth estimation and 3D reconstruction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-depth-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Depth estimation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Depth estimation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-stereo-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Stereo matching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-multi-view-stereo" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Multi-view stereo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3d-reconstruction" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 3D reconstruction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 3D reconstruction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-3d-representations" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 3D representations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-3d-surface-reconstruction" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 3D surface reconstruction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-texture-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Texture mapping
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-9-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 9 Deep Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 9 Deep Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Machine learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Machine learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#概念" class="md-nav__link">
+    <span class="md-ellipsis">
+      概念
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-linear-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Linear classifier
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Linear classifier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classification-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLassification model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear classifier
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loss-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loss function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-neural-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Neural networks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-convolutional-neural-networks--卷积神经网络" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Convolutional neural networks--卷积神经网络
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Convolutional neural networks--卷积神经网络">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convolution--local-connectivity--weight-sharing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convolution = local connectivity + weight sharing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#感受野receptive-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      感受野(Receptive fields)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#池化层pooling-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      池化层(Pooling layer)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#总体框架" class="md-nav__link">
+    <span class="md-ellipsis">
+      总体框架
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-training-neural-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 Training neural networks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Training neural networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#梯度下降训练cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      梯度下降训练CNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#反向传播" class="md-nav__link">
+    <span class="md-ellipsis">
+      反向传播
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#随机梯度下降法sgd" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机梯度下降法(SGD)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#超参数hyper-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      超参数(hyper-parameters)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#过拟合overfitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      过拟合(overfitting)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#批标准化batch-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      批标准化(Batch Normalization)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-network-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 Network architectures
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-10-recognition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 10 Recognition
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 10 Recognition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-semantic-segmentation语义分割" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Semantic segmentation(语义分割)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Semantic segmentation(语义分割)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#名词解释" class="md-nav__link">
+    <span class="md-ellipsis">
+      名词解释
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u-net" class="md-nav__link">
+    <span class="md-ellipsis">
+      U-Net
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deeplab" class="md-nav__link">
+    <span class="md-ellipsis">
+      DeepLab
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#评估指标" class="md-nav__link">
+    <span class="md-ellipsis">
+      评估指标
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-object-detection目标检测" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Object detection(目标检测)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Object detection(目标检测)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#单个物体检测" class="md-nav__link">
+    <span class="md-ellipsis">
+      单个物体检测
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#多个物体检测" class="md-nav__link">
+    <span class="md-ellipsis">
+      多个物体检测
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#滑动窗口" class="md-nav__link">
+    <span class="md-ellipsis">
+      滑动窗口
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#region-proposals候选区域" class="md-nav__link">
+    <span class="md-ellipsis">
+      Region proposals(候选区域)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      R-CNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fast-r-cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fast R-CNN:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rol-pool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rol Pool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      RPN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-instance-segmentation实例分割" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Instance segmentation(实例分割)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-human-pose-estimation人体姿态估计" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Human pose estimation(人体姿态估计)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-optical-flow光流" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 Optical flow(光流)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Optical flow(光流)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#光流场" class="md-nav__link">
+    <span class="md-ellipsis">
+      光流场：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flownet" class="md-nav__link">
+    <span class="md-ellipsis">
+      FlowNet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-other-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 Other tasks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-11-3d-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 11 3D Deep Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 11 3D Deep Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-feature-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Feature matching
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Feature matching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#super-polint-用于提取特征点" class="md-nav__link">
+    <span class="md-ellipsis">
+      Super Polint: 用于提取特征点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superglue-现在最好的检测方法" class="md-nav__link">
+    <span class="md-ellipsis">
+      SuperGlue: 现在最好的检测方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-object-pose-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Object Pose Estimation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-human-pose-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Human Pose Estimation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Human Pose Estimation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#markerless-mocap-相机照射关键点标记物在人身体上markless就是不用贴标记物" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markerless MoCap: 相机照射关键点，标记物在人身体上，Markless就是不用贴标记物
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monocular-3d-human-pose-estimation-参数化人体模型" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monocular 3D Human Pose Estimation: 参数化人体模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-depth-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Depth Estimation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-single-image-to-3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 Single Image to 3D
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Single Image to 3D">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monoculer-depth-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monoculer depth estimation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-view-shape-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single-view shape estimation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-pointnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 PointNet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-12-computational-photography-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 12 Computational Photography I
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 12 Computational Photography I">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-high-dynamic-range-imaging-hdr" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 High Dynamic Range Imaging (HDR)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 High Dynamic Range Imaging (HDR)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exposure曝光" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exposure:曝光
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Range
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hdr" class="md-nav__link">
+    <span class="md-ellipsis">
+      HDR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tone-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tone mapping
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-deblurring" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Deblurring
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Deblurring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reason
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modeling-image-blur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modeling Image Blur
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nbid" class="md-nav__link">
+    <span class="md-ellipsis">
+      NBID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bid" class="md-nav__link">
+    <span class="md-ellipsis">
+      BID
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-colorization黑白变彩色" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Colorization(黑白变彩色)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Colorization(黑白变彩色)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-based-colorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample-based colorization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-colorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive colorization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generative-adversarial-network-gan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generative Adversarial Network (GAN)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-super-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Super Resolution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lec-13-computational-photography-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lec 13 Computational Photography II
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lec 13 Computational Photography II">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-image-based-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Image-based Rendering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Image-based Rendering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#light-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Light Fields
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-plane-image-mpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Plane Image (MPI)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nerf" class="md-nav__link">
+    <span class="md-ellipsis">
+      NeRF
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-neural-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Neural Rendering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Neural Rendering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pose-transfer--garment-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pose Transfer &amp; Garment Transfer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>课程笔记</h1>
+
+<p>接触计算机视觉相关的第一门课程。</p>
+<!--more-->
+
+<h2 id="lec-1-introduction">Lec 1 Introduction<a class="headerlink" href="#lec-1-introduction" title="Permanent link">&para;</a></h2>
+<h3 id="1-cv主要任务">1 CV主要任务：<a class="headerlink" href="#1-cv主要任务" title="Permanent link">&para;</a></h3>
+<ul>
+<li>三维重建</li>
+<li>图像理解</li>
+<li>图像合成</li>
+</ul>
+<h3 id="2-review-of-linear-algebra">2 Review of Linear Algebra<a class="headerlink" href="#2-review-of-linear-algebra" title="Permanent link">&para;</a></h3>
+<p>省略。。。</p>
+<h2 id="lec-2-image-formation">Lec 2 Image formation<a class="headerlink" href="#lec-2-image-formation" title="Permanent link">&para;</a></h2>
+<h3 id="1-camera-and-lens">1 Camera and lens<a class="headerlink" href="#1-camera-and-lens" title="Permanent link">&para;</a></h3>
+<h4 id="pinhole-camera">Pinhole camera<a class="headerlink" href="#pinhole-camera" title="Permanent link">&para;</a></h4>
+<p>Add a barrier to block off most of the rays, the opening known as the aperture(光圈).</p>
+<h4 id="lens">Lens<a class="headerlink" href="#lens" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="63.png" /></p>
+<p>Focal length:</p>
+<div class="arithmatex">\[\frac{1}{i}+\frac{1}{o}=\frac{1}{f}\]</div>
+<p>Image Magnification:</p>
+<div class="arithmatex">\[m=\frac{h_i}{h_o}\]</div>
+<p>Field of View (FOV):</p>
+<p><img alt="" src="64.png" /></p>
+<ul>
+<li>Longer focal length = Narrower angle of view</li>
+<li>Shorter focal length = Wider angle of view </li>
+<li>FOV also depends on sensor size</li>
+</ul>
+<p>Aperture: control image brightness</p>
+<p>F-number: represent aperture as a fraction of focal length</p>
+<p>Depth of Field: range of object distances over which the image is sufficiently well focused</p>
+<p><img alt="" src="65.png" /></p>
+<h3 id="2-geometric-image-formation">2 Geometric image formation<a class="headerlink" href="#2-geometric-image-formation" title="Permanent link">&para;</a></h3>
+<h4 id="pinhole-camera-model-perspective-projection">Pinhole camera model: Perspective Projection<a class="headerlink" href="#pinhole-camera-model-perspective-projection" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="66.png" /></p>
+<h4 id="homogeneous-coordinates">Homogeneous coordinates<a class="headerlink" href="#homogeneous-coordinates" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Converting from Cartesian to Homogeneous coordinates(add an extra dimension)</li>
+<li>Converting from Homogeneous to Cartesian(remove the last dimension by dividing a number)</li>
+</ul>
+<p><img alt="" src="67.png" /></p>
+<p><img alt="" src="68.png" /></p>
+<p>Homogeneous coordinates are invariant to scaling. </p>
+<p>Each point has an infinite set of homogeneous coordinates. </p>
+<p>The point in the 2D plane is projection of a ray in 3D space:</p>
+<p><img alt="" src="69.png" /></p>
+<h4 id="perspective-projection">Perspective Projection<a class="headerlink" href="#perspective-projection" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="70.png" /></p>
+<h4 id="orthographic-projection">Orthographic projection<a class="headerlink" href="#orthographic-projection" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="71.png" /></p>
+<h3 id="3-photometric-image-formation">3 Photometric image formation<a class="headerlink" href="#3-photometric-image-formation" title="Permanent link">&para;</a></h3>
+<h4 id="shutter-speed">Shutter speed<a class="headerlink" href="#shutter-speed" title="Permanent link">&para;</a></h4>
+<p>Shutter speed controls exposure time. The pixel value is equal to the integral of the light intensity within the exposure time.</p>
+<h4 id="rolling-shutter-effect">Rolling shutter effect<a class="headerlink" href="#rolling-shutter-effect" title="Permanent link">&para;</a></h4>
+<p>Exposing the image line by line.</p>
+<h4 id="color-spaces">Color spaces<a class="headerlink" href="#color-spaces" title="Permanent link">&para;</a></h4>
+<ul>
+<li>RGB </li>
+<li>HSV (Hue / Value / Saturation)</li>
+</ul>
+<h4 id="color-sensing-bayer-filter">Color Sensing: Bayer filter<a class="headerlink" href="#color-sensing-bayer-filter" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="72.png" /></p>
+<h2 id="lec-3-image-processing">Lec 3 Image processing<a class="headerlink" href="#lec-3-image-processing" title="Permanent link">&para;</a></h2>
+<h3 id="1-image-processing-basics">1 Image processing basics<a class="headerlink" href="#1-image-processing-basics" title="Permanent link">&para;</a></h3>
+<h4 id="convolution">Convolution<a class="headerlink" href="#convolution" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="73.png" /></p>
+<h4 id="2d-convolution">2D convolution<a class="headerlink" href="#2d-convolution" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="74.png" /></p>
+<h4 id="discrete-2d-convolution">Discrete 2D convolution<a class="headerlink" href="#discrete-2d-convolution" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="75.png" /></p>
+<p>This can also be the same with the vector/matrix dot product.</p>
+<h4 id="padding">Padding<a class="headerlink" href="#padding" title="Permanent link">&para;</a></h4>
+<p>Adding pixels around the image border.</p>
+<h4 id="blur">Blur<a class="headerlink" href="#blur" title="Permanent link">&para;</a></h4>
+<p>box滤波：卷积核全为1</p>
+<p>高斯滤波：特定函数</p>
+<h4 id="sharpen">Sharpen<a class="headerlink" href="#sharpen" title="Permanent link">&para;</a></h4>
+<p>Sharpening is adding high frequencies. </p>
+<ul>
+<li>Let be the original image. </li>
+<li>High frequencies in image is J-blur(I), blur(I) is the low frequencied in image. </li>
+<li>Sharpened image is I+(I-blur(I)).</li>
+</ul>
+<p><img alt="" src="76.png" /></p>
+<h4 id="gradient-detection-filter">Gradient detection filter<a class="headerlink" href="#gradient-detection-filter" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="77.png" /></p>
+<h4 id="bilateral-filter">Bilateral filter<a class="headerlink" href="#bilateral-filter" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="78.png" /></p>
+<h3 id="2-image-sampling">2 Image sampling<a class="headerlink" href="#2-image-sampling" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Change image size / resolution. resolution: pixel / inch</p>
+</blockquote>
+<h4 id="reducing-image-size">Reducing image size<a class="headerlink" href="#reducing-image-size" title="Permanent link">&para;</a></h4>
+<p>降采样，去掉旁边的像素或者取均值</p>
+<h4 id="aliasing">Aliasing<a class="headerlink" href="#aliasing" title="Permanent link">&para;</a></h4>
+<p>Aliasing - artifacts due to sampling </p>
+<p>Signals are changing too fast but sampled too slow.</p>
+<p><img alt="" src="79.png" /></p>
+<h4 id="anti-aliasing">Anti-aliasing<a class="headerlink" href="#anti-aliasing" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="80.png" /></p>
+<p>How to do anti-aliasing </p>
+<ul>
+<li>Convolve the image with low-pass filters (e.g. Gaussian). </li>
+<li>Sample it with a Nyquist rate.</li>
+</ul>
+<h4 id="fourier-transform">Fourier Transform<a class="headerlink" href="#fourier-transform" title="Permanent link">&para;</a></h4>
+<p>Represent a function as a weighted sum of sines and cosines.</p>
+<p><img alt="" src="81.png" /></p>
+<h3 id="3-image-magnification">3 Image magnification<a class="headerlink" href="#3-image-magnification" title="Permanent link">&para;</a></h3>
+<h4 id="interpolation">Interpolation<a class="headerlink" href="#interpolation" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Nearest-neighbor interpolation </p>
+</li>
+<li>
+<p>Linear interpolation </p>
+</li>
+<li>
+<p>Cubic spline interpolation (Polynomial interpolation) </p>
+</li>
+</ul>
+<p>Each interval of function has different parameters</p>
+<ul>
+<li>Bilinear Interpolation (2D) Bilinear Interpolation is good enough.</li>
+</ul>
+<p><img alt="" src="82.png" /></p>
+<h4 id="seam-carving">Seam Carving<a class="headerlink" href="#seam-carving" title="Permanent link">&para;</a></h4>
+<p>A method to change aspect ratio. </p>
+<p>Find connected path of pixels from top to bottom of which the edge energy is minimal, removing unnoticeable pixels.</p>
+<p>Algorithm: DP</p>
+<h2 id="lec-4-model-fitting-and-optimization">Lec 4 Model Fitting and Optimization<a class="headerlink" href="#lec-4-model-fitting-and-optimization" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>本讲与数值分析课程高度重合</p>
+</blockquote>
+<h3 id="1-optimization">1 Optimization<a class="headerlink" href="#1-optimization" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>minimize f<sub>0</sub>(x)</p>
+</blockquote>
+<p><img alt="" src="83.png" /></p>
+<h4 id="model-fitting">Model fitting<a class="headerlink" href="#model-fitting" title="Permanent link">&para;</a></h4>
+<p>Mean Square Error (MSE)</p>
+<p><img alt="" src="84.png" /></p>
+<h3 id="2-numerical-methods">2 Numerical methods<a class="headerlink" href="#2-numerical-methods" title="Permanent link">&para;</a></h3>
+<p>Find a solution path: F (x<sub>0</sub>) &gt; F (x<sub>1</sub>) &gt; … &gt; F (x<sub>k</sub>) &gt; …</p>
+<p>与数值分析课上内容类似，泰勒展开，进行迭代，做一阶、二阶近似</p>
+<h4 id="梯度下降法迭代法的一种">梯度下降法：迭代法的一种<a class="headerlink" href="#梯度下降法迭代法的一种" title="Permanent link">&para;</a></h4>
+<h4 id="newton-method见数值分析课程">Newton method：见数值分析课程<a class="headerlink" href="#newton-method见数值分析课程" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="85.png" /></p>
+<h4 id="高斯-牛顿迭代">高斯-牛顿迭代<a class="headerlink" href="#高斯-牛顿迭代" title="Permanent link">&para;</a></h4>
+<h3 id="3-robust-estimation">3 Robust estimation<a class="headerlink" href="#3-robust-estimation" title="Permanent link">&para;</a></h3>
+<p>Use other loss functions to replace MSE，去掉影响很大的噪点</p>
+<h4 id="random-sample-concensus-ransac">Random Sample Concensus (RANSAC)<a class="headerlink" href="#random-sample-concensus-ransac" title="Permanent link">&para;</a></h4>
+<p>Key ideas </p>
+<ul>
+<li>The distribution of inliers is similar  while outliers differ a lot </li>
+<li>Use data point pairs to vote</li>
+</ul>
+<h3 id="4-interpolation">4 Interpolation<a class="headerlink" href="#4-interpolation" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>具体请参考数值分析</p>
+</blockquote>
+<p>线性插值</p>
+<p>三次样条插值</p>
+<h3 id="5-graphcut">5 Graphcut<a class="headerlink" href="#5-graphcut" title="Permanent link">&para;</a></h3>
+<h4 id="images-as-graphs">Images as Graphs<a class="headerlink" href="#images-as-graphs" title="Permanent link">&para;</a></h4>
+<p>A vertex for each pixel, an edge between each pair, each edge is weighted by the affinity or similarity between its two vertices.</p>
+<h4 id="normalized-cut">Normalized cut<a class="headerlink" href="#normalized-cut" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="86.png" /></p>
+<h4 id="markov-random-field-mrf">Markov Random Field (MRF)<a class="headerlink" href="#markov-random-field-mrf" title="Permanent link">&para;</a></h4>
+<p>马尔科夫随机场，没看懂</p>
+<h2 id="lec-5-image-matching-and-motion-estimation">Lec 5 Image Matching and Motion Estimation<a class="headerlink" href="#lec-5-image-matching-and-motion-estimation" title="Permanent link">&para;</a></h2>
+<h3 id="1-image-matching">1 Image matching<a class="headerlink" href="#1-image-matching" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Finding point-to-point correspondences between two images.</p>
+</blockquote>
+<h4 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Detection: Identify the interest points (key points). </li>
+<li>Description: Extract vector feature descriptor surrounding each interest point. </li>
+<li>Matching: Determine correspondence between descriptors in two views.</li>
+</ul>
+<h4 id="detection">detection<a class="headerlink" href="#detection" title="Permanent link">&para;</a></h4>
+<p>Principal Component Analysis (PCA)</p>
+<p>角点检测</p>
+<ul>
+<li>Compute the covariance matrix at each point</li>
+</ul>
+<p><img alt="" src="87.png" /></p>
+<ul>
+<li>Compute eigenvalues</li>
+</ul>
+<p><img alt="" src="88.png" /></p>
+<ul>
+<li>Classify points using eigenvalues of H:</li>
+</ul>
+<p><img alt="" src="89.png" /></p>
+<h4 id="blob-detector">Blob detector<a class="headerlink" href="#blob-detector" title="Permanent link">&para;</a></h4>
+<p>Blobs are have large second derivatives in image intensity.</p>
+<p><img alt="" src="90.png" /></p>
+<h4 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h4>
+<p>SIFT descriptor：Scale Invariant Feature Transform descriptor, use histogram of oriented gradients.</p>
+<p>SIFT Algorithm</p>
+<ul>
+<li>Run DoG detector to find maximum in location/scale space.</li>
+<li>Find dominate orientation and normalize the orientation.</li>
+<li>For each (x, y, scale, orientation), create the only descriptor.</li>
+</ul>
+<h4 id="matching">Matching<a class="headerlink" href="#matching" title="Permanent link">&para;</a></h4>
+<p>Define the difference between two features f1 , f2, distance L2 = ||f1 − f2 ||</p>
+<p><img alt="" src="91.png" /></p>
+<h3 id="2-motion-estimation">2 Motion estimation<a class="headerlink" href="#2-motion-estimation" title="Permanent link">&para;</a></h3>
+<h4 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h4>
+<p>Both feature matching and motion estimation are called correspondence problems.</p>
+<p>特征追踪：</p>
+<p>Extract feature (interest) points and "track" them over multiple frames. </p>
+<p>Output: displacement of sparse points</p>
+<p>光流法：</p>
+<p>Recover image motion at each pixel </p>
+<p>Output: dense displacement field (optical flow filed)</p>
+<h4 id="lucas-kanade-method">Lucas-Kanade Method<a class="headerlink" href="#lucas-kanade-method" title="Permanent link">&para;</a></h4>
+<p>Key assumptions：</p>
+<ul>
+<li>Small motion: points do not move very far </li>
+<li>Brightness constancy: same point looks the same(in brightness) in every frame </li>
+<li>Spatial coherence: points move like their neighbors</li>
+</ul>
+<p>本讲小总结：</p>
+<p><img alt="" src="92.png" /></p>
+<h2 id="lec-6-image-stitching">Lec 6 Image stitching<a class="headerlink" href="#lec-6-image-stitching" title="Permanent link">&para;</a></h2>
+<h3 id="1-image-warping">1 Image Warping<a class="headerlink" href="#1-image-warping" title="Permanent link">&para;</a></h3>
+<p>Change shape of image</p>
+<h4 id="linear-transformmation">Linear Transformmation<a class="headerlink" href="#linear-transformmation" title="Permanent link">&para;</a></h4>
+<p>Linear map = Matrices</p>
+<p><img alt="" src="93.png" /></p>
+<h4 id="affine-transformation">Affine Transformation<a class="headerlink" href="#affine-transformation" title="Permanent link">&para;</a></h4>
+<p>Affine map = linear map + translation</p>
+<p><img alt="" src="94.png" /></p>
+<p>Using homogenous coordinates</p>
+<p><img alt="" src="95.png" /></p>
+<ul>
+<li>
+<p>6 unknowns in equations </p>
+</li>
+<li>
+<p>2 equations for each match </p>
+</li>
+<li>
+<p>we need at least 3 matches to solve a affine transformation </p>
+</li>
+<li>
+<p>for n matches, solve with least squares</p>
+</li>
+</ul>
+<p><img alt="" src="96.png" /></p>
+<p>The result of solution must be remembered. </p>
+<p>the last row with matrix must be [0 0 1]</p>
+<h4 id="projective-transformation-homography">Projective Transformation (Homography)<a class="headerlink" href="#projective-transformation-homography" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="97.png" /></p>
+<ul>
+<li>
+<p>8 unknowns in equations </p>
+</li>
+<li>
+<p>Homography matrix is up to scale (can be multiplied by a scalar), which means the degree of freedom is 8 . </p>
+</li>
+<li>
+<p>2 equations for each match </p>
+</li>
+<li>
+<p>we need at least 4 matches to solve the homography </p>
+</li>
+<li>
+<p>for n matches, solve with ||h|| = 1</p>
+</li>
+</ul>
+<p>h = eigenvector of A<sup>T</sup>A with smallest eigenvalue</p>
+<h4 id="dof">DoF<a class="headerlink" href="#dof" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Translation: The degree of freedom is 2 </li>
+<li>Affine: The degree of freedom is 6 </li>
+<li>Projective: The degree of freedom is 8</li>
+</ul>
+<h4 id="forward-warping">Forward Warping<a class="headerlink" href="#forward-warping" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="98.png" /></p>
+<h4 id="inverse-warping">Inverse Warping<a class="headerlink" href="#inverse-warping" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="99.png" /></p>
+<p>if pixel lands between pixels, we interpolate color values from neighboring pixels.</p>
+<ul>
+<li>nearest neighbor </li>
+<li>bilinear (usually this method is enough) </li>
+<li>bicubic</li>
+</ul>
+<h3 id="2-image-stitching">2 Image Stitching<a class="headerlink" href="#2-image-stitching" title="Permanent link">&para;</a></h3>
+<p>Algorithm:</p>
+<ul>
+<li>Input images </li>
+<li>Feature matching </li>
+<li>Compute transformation matrix with RANSAC </li>
+<li>Fix image 1 and warp image 2</li>
+</ul>
+<p>Cylindrical projection:</p>
+<p><img alt="" src="100.png" /></p>
+<h2 id="lec-7-structure-from-motion">Lec 7 Structure from Motion<a class="headerlink" href="#lec-7-structure-from-motion" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Target: recover camera poses and 3D structure of a scene from its images</p>
+</blockquote>
+<h3 id="1-camera-calibration">1 Camera calibration<a class="headerlink" href="#1-camera-calibration" title="Permanent link">&para;</a></h3>
+<h4 id="图像处理">图像处理<a class="headerlink" href="#图像处理" title="Permanent link">&para;</a></h4>
+<p>参考文献：<a href="https://blog.csdn.net/fengye2two/article/details/80686409/">图像处理——相机标定</a></p>
+<blockquote>
+<p>世界坐标系（world coordinate）(<em>xw,yw,zw</em>)，也称为测量坐标系，是一个三维直角坐标系，以其为基准可以描述相机和待测物体的空间位置。世界坐标系的位置可以根据实际情况自由确定。世界坐标系的最小单位为mm。</p>
+<p>相机坐标系（camera coordinate）(<em>xc,yc,zc</em>)，也是一个三维直角坐标系，原点位于镜头光心处，xc、yc轴分别与像面的两边平行，zc轴为镜头光轴，与像平面垂直。相机坐标系的最小单位为mm。</p>
+<p>图像坐标系（image coordinate）(<em>x</em>,<em>y</em>)，是像平面上的二维直角坐标系。图像坐标系的原点为镜头光轴与像平面的交点（也称主点，principal point），它的x轴与相机坐标系的xc轴平行，它的y轴与相机坐标系的yc轴平行。图像坐标系的最小单位为mm。</p>
+<p>像素坐标系（pixel coordinate）(u,v)，是图像处理工作中常用的二维直角坐标系，反映了相机CCD/CMOS芯片中像素的排列情况。它的原点位于图像左上角，横坐标u表示像素所在的列，纵坐标v表示像素所在的行。像素坐标系与图像坐标系可以简单理解为平移关系，它们同处于像平面。像素坐标系的x轴与图像坐标系的u轴平行，像素坐标系的y轴与图像坐标系的v轴平行。像素坐标系的最小单位为像素。</p>
+</blockquote>
+<p>变换过程：</p>
+<p>世界=》相机=》图像=》像素</p>
+<p><img alt="" src="1.png" /></p>
+<p><img alt="" src="2.png" /></p>
+<p><img alt="" src="3.png" /></p>
+<p>so, it is similar to lab2.</p>
+<p><img alt="" src="4.png" /></p>
+<p>世界直接转换为像素：</p>
+<p><img alt="" src="5.png" /></p>
+<p>解方程时：</p>
+<ul>
+<li>找特征点，建立方程求解未知数<span class="arithmatex">\(p\)</span></li>
+</ul>
+<blockquote>
+<p>具体查看参考文献和课程PPT</p>
+</blockquote>
+<h4 id="pnp问题">PnP问题<a class="headerlink" href="#pnp问题" title="Permanent link">&para;</a></h4>
+<p>参考文献：<a href="https://zhuanlan.zhihu.com/p/399140251">PnP问题各种算法总结分析</a></p>
+<blockquote>
+<p>问题描述：已知n个3D点的坐标(相对世界坐标系)以及这些点的像素坐标时，如何估计相机的位姿</p>
+</blockquote>
+<h5 id="direct-linear-transform-dlt">Direct Linear Transform (DLT)<a class="headerlink" href="#direct-linear-transform-dlt" title="Permanent link">&para;</a></h5>
+<p>前面我们通过解方程的形式解出了这个方程，这种方法就叫做DLT。</p>
+<h5 id="p3p">P3P<a class="headerlink" href="#p3p" title="Permanent link">&para;</a></h5>
+<p>至少三个对应关系可以解出相机坐标，还需要一个对应关系使这个解是特解。</p>
+<p><img alt="" src="6.png" /></p>
+<p><img alt="" src="7.png" /></p>
+<h5 id="epnp">EPnP<a class="headerlink" href="#epnp" title="Permanent link">&para;</a></h5>
+<p>Main steps: </p>
+<ol>
+<li>Represent each point as the linear combination of 4 control points c<sub>i</sub>. </li>
+<li>
+<p>Construct a linear system in the control-point coordinate.</p>
+</li>
+<li>
+<p>Solve the equation.</p>
+</li>
+</ol>
+<h3 id="2-two-frame-structure-from-motion">2 Two-frame structure from motion<a class="headerlink" href="#2-two-frame-structure-from-motion" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Assume Camera Matrix 𝐾 is known for each camera </li>
+<li>Find a few Reliable Corresponding Points</li>
+<li>Find Relative Camera Position 𝐭 and Orientation 𝑅</li>
+<li>Find 3D position of scene points</li>
+</ol>
+<p>详细讲解：<a href="https://zhuanlan.zhihu.com/p/472205819">对极几何--知乎</a></p>
+<p>​                   <a href="https://xhy3054.github.io/epipolar-geometry/">对极几何--github</a></p>
+<h3 id="3-multi-frame-structure-from-motion">3 Multi-frame structure from motion<a class="headerlink" href="#3-multi-frame-structure-from-motion" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Initialize camera motion and scene structure </li>
+<li>For each additional view - Determine projection matrix of new camera using all the
+    known 3D points that are visible in its image - Refine and extend structure: compute new 3D points, reoptimize existing points that are also seen by this camera</li>
+<li>Refine structure and motion: Bundle Adjustment</li>
+</ol>
+<h3 id="4-a-modern-sfm-system-colmap">4 A modern SfM system: COLMAP<a class="headerlink" href="#4-a-modern-sfm-system-colmap" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>sfM: Structure-from-Motion</p>
+<p>MVS: Multi-View Stereo</p>
+</blockquote>
+<p><img alt="" src="8.png" /></p>
+<h2 id="lec-8-depth-estimation-and-3d-reconstruction">Lec 8 Depth estimation and 3D reconstruction<a class="headerlink" href="#lec-8-depth-estimation-and-3d-reconstruction" title="Permanent link">&para;</a></h2>
+<h3 id="1-depth-estimation">1 Depth estimation<a class="headerlink" href="#1-depth-estimation" title="Permanent link">&para;</a></h3>
+<h4 id="11-introduction">1.1 Introduction<a class="headerlink" href="#11-introduction" title="Permanent link">&para;</a></h4>
+<p>​   深度传感器顾名思义是用来探测环境物体与传感器之间的距离的。它的输出主要可以表示为深度图(depth map)和点云(point cloud)这两种形式。</p>
+<p>​   深度图像（depth image)也被称为距离影像（range image），是指将从图像采集器到场景中各点的距离（深度）作为像素值的图像，它直接反映了景物可见表面的几何形状。深度图像经过坐标转换可以计算为点云数据，有规则及必要信息的点云数据也可以反算为深度图像数据。
+深度数据流所提供的图像帧中，每一个像素点代表的是在深度感应器的视野中，该特定的（x, y）坐标处物体到离摄像头平面最近的物体到该平面的距离（以毫米为单位）。</p>
+<ul>
+<li>被动测距传感(Passive depth sensing)</li>
+</ul>
+<blockquote>
+<p>被动测距传感=两个相隔一定距离的相机获得两幅图像+立体匹配+三角原理计算视差（disparity）</p>
+</blockquote>
+<p>​       两个相隔一定距离的摄像机同时获取同一场景的两幅图像，通过立体匹配算法找到两幅图像中对应的像素点，随后根据三角原理计算出视差信息，而视差信息通过转换可用于表征场景中物体的深度信息。基于立体匹配算法，还可通过拍摄同一场景下不同角度的一组图像来获得该场景的深度图像。除此之外，场景深度信息还可以通过对图像的光度特征、明暗特征等特征进行分析间接估算得到。</p>
+<ul>
+<li>主动测距传感(Active depth sensing)</li>
+</ul>
+<p>​       主动测距传感相比较于被动测距传感最明显的特征是：设备本身需要发射能量来完成深度信息的采集。这也就保证了深度图像的获取独立于彩色图像的获取。近年来，主动深度传感在市面上的应用愈加丰富。主动深度传感的方法主要包括了TOF（Time of Flight）、结构光、激光扫描等。</p>
+<h4 id="12-stereo-matching">1.2 Stereo matching<a class="headerlink" href="#12-stereo-matching" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>参考资料<a href="https://zhuanlan.zhihu.com/p/161276985">3D视觉之立体匹配</a></p>
+<p><a href="https://blog.csdn.net/Android_WPF/article/details/126434543">立体匹配算法</a></p>
+</blockquote>
+<p>最简单的算法：</p>
+<ul>
+<li>For each pixel in the first image </li>
+<li>Find corresponding epipolar line in the right image</li>
+<li>Search along epipolar line and pick the best match</li>
+<li>Simplest case: epipolar lines are horizontal scanlines</li>
+</ul>
+<p><img alt="" src="9.png" /></p>
+<p>这样就找到了两个相同的点，然后计算深度。</p>
+<p><img alt="" src="10.png" /></p>
+<p>如果视角不在同一水平线上，就先把他们转到同一水平线。</p>
+<p><img alt="" src="11.png" /></p>
+<p>Stereo as energy minimization：让当前像素的代价聚合过程受多个方向(或路径)上所有像素的影响，方向越多参与影响当前像素的邻域像素就越多</p>
+<p>动态规划：</p>
+<p><img alt="" src="12.png" /></p>
+<p>Choosing the stereo baseline：</p>
+<ul>
+<li>Too small: large depth error </li>
+<li>Too large: difficult search problem</li>
+</ul>
+<p><img alt="" src="13.png" /></p>
+<h4 id="13-multi-view-stereo">1.3 Multi-view stereo<a class="headerlink" href="#13-multi-view-stereo" title="Permanent link">&para;</a></h4>
+<p>Plane-Sweep: <a href="https://blog.csdn.net/xuangenihao/article/details/81392684">平面扫描算法</a></p>
+<p>PatchMatch: <a href="PatchMatch">PatchMatch</a></p>
+<ol>
+<li>Initialize pixels with random patch offsets</li>
+<li>Check if neighbors have better patch offsets</li>
+<li>Search in concentric radius around the current offset for better better patch offsets</li>
+<li>Go to Step 2 until converge.</li>
+</ol>
+<h3 id="2-3d-reconstruction">2 3D reconstruction<a class="headerlink" href="#2-3d-reconstruction" title="Permanent link">&para;</a></h3>
+<h4 id="21-3d-representations">2.1 3D representations<a class="headerlink" href="#21-3d-representations" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="14.png" /></p>
+<ul>
+<li>
+<p>点云</p>
+</li>
+<li>
+<p>mesh 用G(E, V)表示</p>
+</li>
+<li>
+<p>voxel</p>
+</li>
+</ul>
+<p><img alt="" src="15.png" /></p>
+<ul>
+<li>
+<p>SDF(Signed Distance Function)</p>
+</li>
+<li>
+<p>The distance of a point to the shape boundary</p>
+</li>
+<li>The distance is defined by a metric, usually the Euclidean distance</li>
+</ul>
+<p>Truncated Signed Distance Function (TSDF): Truncation SDF’s distance value to [−1, 1]</p>
+<h4 id="22-3d-surface-reconstruction">2.2 3D surface reconstruction<a class="headerlink" href="#22-3d-surface-reconstruction" title="Permanent link">&para;</a></h4>
+<p><a href="https://blog.csdn.net/qinqinxiansheng/article/details/119449196">KinectFusion</a></p>
+<p><img alt="" src="16.png" /></p>
+<p><strong><a href="https://www.jianshu.com/p/8641e0db0367">泊松重建</a></strong></p>
+<p><a href="https://blog.csdn.net/weixin_38060850/article/details/109143025"><strong>Marching Cubes算法</strong></a></p>
+<p>视频介绍Marching Cubes算法: </p>
+<iframe src="//player.bilibili.com/player.html?aid=79262663&bvid=BV1yJ411r73v&cid=135644481&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p><a href="https://blog.csdn.net/whuawell/article/details/74998280">Marching Squares</a> 基本和Marching cubes 类似。</p>
+<p><img alt="" src="17.png" /></p>
+<p><strong><a href="https://blog.csdn.net/jiankangyq/article/details/121808174">COLMAP</a></strong>: 一种通用的运动结构 (SfM) 和多视图立体 (MVS) 管道。</p>
+<h4 id="23-texture-mapping">2.3 Texture mapping<a class="headerlink" href="#23-texture-mapping" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Surface lives in 3D world space</p>
+<p>Every 3D surface point also has a place where it goes in the 2D image (texture).</p>
+</blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/364045620">纹理映射(Texture mapping)</a></p>
+<h2 id="lec-9-deep-learning">Lec 9 Deep Learning<a class="headerlink" href="#lec-9-deep-learning" title="Permanent link">&para;</a></h2>
+<h3 id="1-machine-learning">1 Machine learning<a class="headerlink" href="#1-machine-learning" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>传统程序是给电脑输入和程序，电脑给出输出。</p>
+<p>机器学习是给电脑输入和输出，电脑给出程序。</p>
+</blockquote>
+<h4 id="概念">概念<a class="headerlink" href="#概念" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Model: <span class="arithmatex">\(x\)</span>和<span class="arithmatex">\(y\)</span>之间关系的数学表示</p>
+</li>
+<li>
+<p>Supervised learning(监督学习): 可以由训练资料中学到或建立一个模式（函数/learning model），并且依次模式推测出新的实例。</p>
+</li>
+</ul>
+<p>labeled data: exisitng (x,y) pairs, called training data.</p>
+<ul>
+<li>
+<p>机器学习的两个阶段：</p>
+</li>
+<li>
+<p>训练(Training)</p>
+</li>
+<li>测试(Testing)</li>
+</ul>
+<p><img alt="" src="18.png" /></p>
+<h3 id="2-linear-classifier">2 Linear classifier<a class="headerlink" href="#2-linear-classifier" title="Permanent link">&para;</a></h3>
+<h4 id="classification-model">CLassification model<a class="headerlink" href="#classification-model" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>输入是一张图片</p>
+<p>输出是每个分类的对应分数</p>
+</blockquote>
+<p>有两部分组成：</p>
+<ul>
+<li>评分函数</li>
+<li>损失函数</li>
+</ul>
+<h4 id="linear-classifier">Linear classifier<a class="headerlink" href="#linear-classifier" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="19.png" /></p>
+<p><img alt="" src="20.png" /></p>
+<p>将一张照片里面的所有像素变成一个向量。</p>
+<p><span class="arithmatex">\(f(x_i,W,b) = Wx_i + b\)</span></p>
+<p>参数<strong>W</strong>被称为<strong>权重（weights）</strong>，<strong>b</strong>被称为<strong>偏差向量（bias vector）</strong>。</p>
+<ul>
+<li>首先，一个单独的矩阵乘法<span class="arithmatex">\(Wx_i\)</span>就高效地并行评估10个不同的分类器（每个分类器针对一个分类），其中每个类的分类器就是W的一个行向量。</li>
+<li>训练数据用来学习<span class="arithmatex">\(W\)</span>和<span class="arithmatex">\(b\)</span></li>
+<li>一张图像可看做高维空间的一个点，每个分类就是把这些点划分成若干个区域。</li>
+</ul>
+<h4 id="loss-function">Loss function<a class="headerlink" href="#loss-function" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>判断一个权重矩阵是否足够好</p>
+<p>回归问题使用均方误差(MSE)</p>
+<p>分类问题使用交叉熵(Cross Entropy Loss)</p>
+<p>参考资料：<a href="https://blog.csdn.net/xg123321123/article/details/80781611">简单谈谈Cross Entropy Loss</a></p>
+</blockquote>
+<p><img alt="" src="21.png" /></p>
+<p>Softmax: 把K个实值转换为另外K个实值并使K个实值之和为1的函数。</p>
+<p><img alt="" src="22.png" /></p>
+<h3 id="3-neural-networks">3 Neural networks<a class="headerlink" href="#3-neural-networks" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>参考资料：<a href="https://blog.csdn.net/weixin_39910711/article/details/114849349">激活函数（Activation Function）</a></p>
+</blockquote>
+<p>​   <strong>激活函数</strong>：不使用激活函数的话，神经网络的每层都只是做<strong>线性变换</strong>，多层输入叠加后也还是线性变换。因为线性模型的表达能力通常不够，所以这时候就体现了激活函数的作用了，激活函数可以引入<strong>非线性因素</strong>。</p>
+<p>​   在神经网络每一层神经元做完线性变换后，加上一个非线性激励函数对线性变换的结果进行转换，输出就可以变成一个非线性的函数。</p>
+<p><img alt="" src="23.png" /></p>
+<p><strong>多层感知器</strong></p>
+<p><img alt="" src="24.png" /></p>
+<p><strong>全连接神经网络</strong></p>
+<p><img alt="" src="25.png" /></p>
+<h3 id="4-convolutional-neural-networks--卷积神经网络">4 Convolutional neural networks--卷积神经网络<a class="headerlink" href="#4-convolutional-neural-networks--卷积神经网络" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>参考资料：<a href="https://blog.csdn.net/jiaoyangwm/article/details/80011656/">卷积神经网络超详细介绍</a></p>
+</blockquote>
+<h4 id="convolution--local-connectivity--weight-sharing">Convolution = local connectivity + weight sharing<a class="headerlink" href="#convolution--local-connectivity--weight-sharing" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>两者的关键作用就是减少参数数量，使运算变得简洁、高效，能够在超大规模数据集上运算</p>
+</blockquote>
+<p>local connectivity(局部连接): 对于局部连接而言：层间神经只有局部范围内的连接，在这个范围内采用全连接的方式，超过这个范围的神经元则没有连接；连接与连接之间独立参数，相比于去全连接减少了感受域外的连接，有效减少参数规模。</p>
+<p>weight sharing(权值共享): 从图像局部学习到的信息应用到图像的其他部位去。权值共享意味着每一个过滤器在遍历整个图像的时候，过滤器的参数(即过滤器的参数的值)是固定不变的</p>
+<p>参考：<a href="https://blog.csdn.net/malvas/article/details/86647781">weight sharing</a></p>
+<h4 id="感受野receptive-fields">感受野(Receptive fields)<a class="headerlink" href="#感受野receptive-fields" title="Permanent link">&para;</a></h4>
+<ul>
+<li>若目标相对感受野过小，那训练参数只有少部分是对应于训练目标的，则在测试环节，也很难检测出类似的目标；</li>
+<li>若目标相对感受野过大，那训练的参数都是对应于整个对象的局部信息，是不够利于检测小目标的。</li>
+</ul>
+<h4 id="池化层pooling-layer">池化层(Pooling layer)<a class="headerlink" href="#池化层pooling-layer" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="26.png" /></p>
+<h4 id="总体框架">总体框架<a class="headerlink" href="#总体框架" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="27.png" /></p>
+<h3 id="5-training-neural-networks">5 Training neural networks<a class="headerlink" href="#5-training-neural-networks" title="Permanent link">&para;</a></h3>
+<h4 id="梯度下降训练cnn">梯度下降训练CNN<a class="headerlink" href="#梯度下降训练cnn" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="28.png" /></p>
+<h4 id="反向传播">反向传播<a class="headerlink" href="#反向传播" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>参考：<a href="https://zhuanlan.zhihu.com/p/21407711?refer=intelligentunit">反向传播-cs231n</a></p>
+</blockquote>
+<ol>
+<li>Forward data through the network, get loss</li>
+<li>Backprop to calculate the gradients</li>
+<li>Update the parameters using the gradient</li>
+<li>Go to step 1 if not converged</li>
+</ol>
+<h4 id="随机梯度下降法sgd">随机梯度下降法(SGD)<a class="headerlink" href="#随机梯度下降法sgd" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>参考：<a href="https://blog.csdn.net/weixin_41803874/article/details/114016587">随机梯度下降详解</a></p>
+</blockquote>
+<p>仅计算一批随机采样图像上的损失和梯度。</p>
+<h4 id="超参数hyper-parameters">超参数(hyper-parameters)<a class="headerlink" href="#超参数hyper-parameters" title="Permanent link">&para;</a></h4>
+<p>算法运行前需要决定的参数。</p>
+<p>选择依据：</p>
+<ol>
+<li>Train for original model</li>
+<li>Validate to find hyperparameters</li>
+<li>Test to understand generalizability</li>
+</ol>
+<h4 id="过拟合overfitting">过拟合(overfitting)<a class="headerlink" href="#过拟合overfitting" title="Permanent link">&para;</a></h4>
+<p>把噪音点也拟合上了，过分依赖数据集。</p>
+<p>防止：</p>
+<ol>
+<li>
+<p>Cross validation(验证) and early stop</p>
+</li>
+<li>
+<p>Regularization(正则化) or dropout</p>
+</li>
+</ol>
+<p><strong>正则化</strong>：在损失函数中给每个参数 w 加上权重，引入模型复杂度指标，从而抑制模型噪声，减小过拟合。 </p>
+<p><strong>dropout</strong>：在前向传播的时候，让某个神经元的激活值以一定的概率p停止工作，这样可以使模型泛化性更强，因为它不会太依赖某些局部的特征</p>
+<ol>
+<li>Data augmentation(数据增强)</li>
+</ol>
+<blockquote>
+<p>参考：<a href="https://zhuanlan.zhihu.com/p/41679153">数据增强(Data Augmentation)</a></p>
+</blockquote>
+<p>​    为了获得更多的数据，我们只要对现有的数据集进行微小的改变。比如旋转（flips）、移位（translations）、旋转（rotations）等微小的改变。我们的网络会认为这是不同的图片。</p>
+<h4 id="批标准化batch-normalization">批标准化(Batch Normalization)<a class="headerlink" href="#批标准化batch-normalization" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>参考<a href="https://www.cnblogs.com/guoyaohua/p/8724433.html">深入理解BN</a></p>
+</blockquote>
+<p>​   目的：Reduce internal covariate shift(<a href="https://zhuanlan.zhihu.com/p/480425962">内部协变量偏移</a>)</p>
+<p>​   神经网络的深度增加，每层特征值分布会逐渐的向激活函数的输出区间的上下两端（激活函数饱和区间）靠近，这样继续下去就会导致梯度消失。BN就是通过方法将<strong>该层特征值分布重新拉回标准正态分布</strong>，特征值将落在激活函数对于输入较为敏感的区间，输入的小变化可导致损失函数较大的变化，使得梯度变大，避免梯度消失，同时也可加快收敛。</p>
+<p>​   训练时的使用方法：对每个隐层加上一层BN。</p>
+<h3 id="6-network-architectures">6 Network architectures<a class="headerlink" href="#6-network-architectures" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>以前发展不好：</p>
+<ul>
+<li>数据集过小导致过拟合</li>
+<li>计算能力不够</li>
+</ul>
+</blockquote>
+<p><a href="https://blog.csdn.net/qq_42076902/article/details/123864381">AlexNet</a></p>
+<p><a href="https://blog.csdn.net/qq_45649076/article/details/120494328">ResNet</a></p>
+<p><a href="https://blog.csdn.net/qq_44766883/article/details/112011420">DenseNet</a>：互相连接所有的层</p>
+<p><img alt="" src="29.png" /></p>
+<p><a href="https://blog.csdn.net/qq_47233366/article/details/123029998">MobileNets</a></p>
+<p><a href="https://blog.csdn.net/fengmaomao1991/article/details/121247163">Neural Architecture Search</a>(神经架构搜索)</p>
+<h2 id="lec-10-recognition">Lec 10 Recognition<a class="headerlink" href="#lec-10-recognition" title="Permanent link">&para;</a></h2>
+<h3 id="1-semantic-segmentation语义分割">1 Semantic segmentation(语义分割)<a class="headerlink" href="#1-semantic-segmentation语义分割" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>在图像领域，语义指的是图像的内容，对图片意思的理解，比如左图的语义就是三个人骑着三辆自行车；分割的意思是从像素的角度分割出图片中的不同对象，对原图中的每个像素都进行标注。</p>
+</blockquote>
+<p><img alt="" src="30.png" /></p>
+<h4 id="名词解释">名词解释<a class="headerlink" href="#名词解释" title="Permanent link">&para;</a></h4>
+<p>滑动窗口：时间复杂度高，有限的感受野。</p>
+<p>全连接卷积网络：一次做出预测，损失函数是每个像素的交叉熵。</p>
+<p>Unpolling：一种上采样方法，有很多种具体案例。</p>
+<p><img alt="" src="31.png" /></p>
+<p><img alt="" src="32.png" /></p>
+<h4 id="u-net">U-Net<a class="headerlink" href="#u-net" title="Permanent link">&para;</a></h4>
+<p>Skip Connection: 跳过中间连接，使深层和浅层连接起来。</p>
+<p><img alt="" src="33.png" /></p>
+<h4 id="deeplab">DeepLab<a class="headerlink" href="#deeplab" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>参考: <a href="https://blog.csdn.net/weixin_42137700/article/details/81835354">图像语义分割之FCN和CRF</a></p>
+</blockquote>
+<p>图像语义分割步骤：</p>
+<ul>
+<li>FCN - 全卷积网络</li>
+<li>CRF - 条件随机场(Conditional random field)</li>
+<li>MRF - 马尔科夫随机场</li>
+</ul>
+<h4 id="评估指标">评估指标<a class="headerlink" href="#评估指标" title="Permanent link">&para;</a></h4>
+<p>Per-pixel Intersection-over-union</p>
+<h3 id="2-object-detection目标检测">2 Object detection(目标检测)<a class="headerlink" href="#2-object-detection目标检测" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>输入：一张RGB图片</p>
+<p>输出：表示对象的一组边界框(类别标签、框的位置，框的大小)</p>
+</blockquote>
+<h4 id="单个物体检测">单个物体检测<a class="headerlink" href="#单个物体检测" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="34.png" /></p>
+<h4 id="多个物体检测">多个物体检测<a class="headerlink" href="#多个物体检测" title="Permanent link">&para;</a></h4>
+<p>一张照片经过各种不同的神经网络，得出结果。</p>
+<h4 id="滑动窗口">滑动窗口<a class="headerlink" href="#滑动窗口" title="Permanent link">&para;</a></h4>
+<p>Apply a CNN to many different crops of the image, CNN classifies each crop as object or background.</p>
+<p>一张图片可以被拆分成很多boxes，我们不能检测所有这些图片。</p>
+<h4 id="region-proposals候选区域">Region proposals(候选区域)<a class="headerlink" href="#region-proposals候选区域" title="Permanent link">&para;</a></h4>
+<p>用图像分割算法先分割图像，然后再进行目标检测。</p>
+<h4 id="r-cnn">R-CNN<a class="headerlink" href="#r-cnn" title="Permanent link">&para;</a></h4>
+<ol>
+<li>选建议框并调整尺寸</li>
+<li>对每个类别使用SVM分类器进行打分</li>
+<li>进行筛选</li>
+<li>损失函数：<span class="arithmatex">\(loU=\frac {Area Of Overlap}{Area Of Union}\)</span></li>
+</ol>
+<p><img alt="" src="35.png" /></p>
+<p>Mean Average Precision (mAP)：</p>
+<ol>
+<li>Run object detector on all test images </li>
+<li>
+<p>For each category, compute Average Precision (AP) = area under Precision vs Recall Curve </p>
+</li>
+<li>
+<p>For each detection (highest score to lowest score) </p>
+<ol>
+<li>
+<p>If it matches some GT box with IoU &gt; 0.5, mark it as positive and eliminate the GT</p>
+</li>
+<li>
+<p>Otherwise mark it as negative </p>
+</li>
+<li>
+<p>Plot a point on PR Curve</p>
+</li>
+<li>Average Precision (AP) = area under PR curve</li>
+<li>Mean Average Precision (mAP) = average of AP for each category</li>
+<li>For “COCO mAP”: Compute mAP@thresh for each IoU threshold (0.5, 0.55, 0.6, …, 0.95) and take average</li>
+</ol>
+</li>
+</ol>
+<p>非最大抑制(Non-Max Suppression):</p>
+<ol>
+<li>Select the highest-scoring box </li>
+<li>Eliminate lower-scoring boxes with IoU &gt; threshold </li>
+<li>If any boxes remain, goto 1</li>
+</ol>
+<h4 id="fast-r-cnn">Fast R-CNN:<a class="headerlink" href="#fast-r-cnn" title="Permanent link">&para;</a></h4>
+<p>A two-stage object detector</p>
+<ul>
+<li>First stage: run once per image</li>
+<li>Backbone network</li>
+<li>RPN</li>
+<li>Second stage: run once per region</li>
+<li>Crop features: RoI pool / align</li>
+<li>Predict object class</li>
+<li>Predict bbox offset</li>
+</ul>
+<p><img alt="" src="36.png" /></p>
+<h4 id="rol-pool">Rol Pool<a class="headerlink" href="#rol-pool" title="Permanent link">&para;</a></h4>
+<p><a href="https://blog.csdn.net/qq_41021141/article/details/120617660">R-CNN中的ROIPool、ROIAlign</a></p>
+<h4 id="rpn">RPN<a class="headerlink" href="#rpn" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>参考：<a href="https://blog.csdn.net/weixin_42912710/article/details/119872716">详解RPN网络</a></p>
+<p>RPN（Region Proposal Network）是Faster-RCNN网络用于提取预选框（也就是RCNN中使用selective search算法进行Region Proposal的部分），R-CNN及Fast-RCNN中一个性能瓶颈就是提取预选框的部分，而RPN很好地对这个部分进行了优化，原因在于它将卷积神经网络引入了进来，使用特征提取的形式生成出预选框的位置从而降低了selective search算法带来的计算时间上的开销。</p>
+</blockquote>
+<p>​   假设我们有一张大小为600×800的图像，在通过卷积神经网络（CNN）块后，这幅输入图像缩小为38×56的特征图，特征图的每个位置都有9个锚点盒。那么我们就有38 * 56 * 9=1192个建议或锚箱需要考虑。而每个锚箱都有两个可能的标签（前景或背景）。如果我们把特征图的深度定为18（9个锚点x 2个标签），我们将使每个锚点都有一个有两个值的向量（通常称为预测值），代表前景和背景。如果我们将预测值送入softmax/logistic回归激活函数，它将预测标签。</p>
+<h3 id="3-instance-segmentation实例分割">3 Instance segmentation(实例分割)<a class="headerlink" href="#3-instance-segmentation实例分割" title="Permanent link">&para;</a></h3>
+<ol>
+<li>语义分割的话只需要分出不同类就行，同类的不同个体不需要分，但是Instance Segmentation这里在语义分割的基础上又把不同的类进行了分割</li>
+<li>目标检测后，需要对检测的部分做进一步的语义分割</li>
+</ol>
+<p><a href="https://blog.csdn.net/qq_37392244/article/details/88844681">Mask R-CNN</a>:</p>
+<p>在Faster R-CNN的基础上添加了一个预测分割mask的分支，如下图所示。其中黑色部分为原来的Faster-RCNN，红色部分为在Faster-RCNN网络上的修改。将RoI Pooling 层替换成了RoIAlign层；添加了并列的FCN层（mask层）。</p>
+<p><img alt="" src="37.png" /></p>
+<blockquote>
+<p>DeepSnake: 通过深度学习给出输入初始轮廓顶点需要调整的偏移量，以得到更为准确的实例分割结果。</p>
+</blockquote>
+<p>Panoptic segmentation: 对每一个像素都分出类别</p>
+<h3 id="4-human-pose-estimation人体姿态估计">4 Human pose estimation(人体姿态估计)<a class="headerlink" href="#4-human-pose-estimation人体姿态估计" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>通过定位一组关键点来表示人的姿势</p>
+</blockquote>
+<p>单人：Represent joint location as the heatmap(现在把关键点用热力图(heat map)表示，不需要全连接层，加速算法减少参数量。对于每一个关键点输出一张heat map)</p>
+<p>多人：</p>
+<ul>
+<li>Top-down(准确)：把多人转成单人，图像分割</li>
+<li>Bottom-up(快)：先检测出图中所有人的所有关键点，再对关键点进行分组，进而组装成多个人</li>
+</ul>
+<blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/104917833">人体姿态估计(Human Pose Estimation)经典方法整理</a></p>
+</blockquote>
+<h3 id="5-optical-flow光流">5 Optical flow(光流)<a class="headerlink" href="#5-optical-flow光流" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>参考：<a href="https://blog.csdn.net/qq_41368247/article/details/82562165">计算机视觉--光流法(optical flow)简介</a></p>
+<p>光流(optical flow)是空间运动物体在观察成像平面上的像素运动的瞬时速度。在时间间隔很小（比如视频的连续前后两帧之间）时，也等同于目标点的位移。</p>
+</blockquote>
+<h4 id="光流场">光流场：<a class="headerlink" href="#光流场" title="Permanent link">&para;</a></h4>
+<p>​   光流场是一个二维矢量场，它反映了图像上每一点灰度的变化趋势，可看成是带有灰度的像素点在图像平面上运动而产生的瞬时速度场。它包含的信息即是各像点的瞬时运动速度矢量信息。</p>
+<p>​   研究光流场的目的就是为了从序列图像中近似计算不能直接得到的运动场。光流场在理想情况下，光流场对应于运动场。</p>
+<h4 id="flownet">FlowNet<a class="headerlink" href="#flownet" title="Permanent link">&para;</a></h4>
+<p>两部分：缩小和放大</p>
+<ul>
+<li>缩小(卷积)部分</li>
+<li>第一种缩小(卷积)方案是最朴素的方法的，就是将这一对图片的通道concat起来</li>
+<li>第二中方案是这一对图片分开处理，分别进入卷积网路，得到各自的特征图，然后再找到它们特征图之间的联系。</li>
+</ul>
+<p><img alt="" src="39.png" /></p>
+<ul>
+<li>放大部分</li>
+</ul>
+<p>一边向后unconv，一边直接在小的特征图上预测，然后把结果双线性插值然后concat在unconv后的特征图上，然后接着往后传，重复四次后，得到的预测光流分辨率依然是输入的&frac14;，再重复之前的操作已没有太多提升，所以可以直接双线性插值得到和输入相同分辨率的光流预测图。</p>
+<p><img alt="" src="38.png" /></p>
+<h3 id="6-other-tasks">6 Other tasks<a class="headerlink" href="#6-other-tasks" title="Permanent link">&para;</a></h3>
+<p>Video classification: Use 3D CNN</p>
+<p>Temporal action localization: Generate proposals then classify</p>
+<p>Multi-object tracking</p>
+<h2 id="lec-11-3d-deep-learning">Lec 11  3D Deep Learning<a class="headerlink" href="#lec-11-3d-deep-learning" title="Permanent link">&para;</a></h2>
+<h3 id="1-feature-matching">1 Feature matching<a class="headerlink" href="#1-feature-matching" title="Permanent link">&para;</a></h3>
+<h4 id="super-polint-用于提取特征点">Super Polint: 用于提取特征点<a class="headerlink" href="#super-polint-用于提取特征点" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="40.png" /></p>
+<ul>
+<li>CNN-based detectors: Representing feature point locations by heatmaps</li>
+</ul>
+<p><img alt="" src="41.png" /></p>
+<ul>
+<li>CNN-based descriptors: Extract descriptors from CNN feature maps(每一张图都是一层神经网络下的特征图，取所有图中对应的点做一个向量)</li>
+</ul>
+<p><img alt="" src="42.png" /></p>
+<h4 id="superglue-现在最好的检测方法">SuperGlue: 现在最好的检测方法<a class="headerlink" href="#superglue-现在最好的检测方法" title="Permanent link">&para;</a></h4>
+<h3 id="2-object-pose-estimation">2 Object Pose Estimation<a class="headerlink" href="#2-object-pose-estimation" title="Permanent link">&para;</a></h3>
+<p>Estimate the 3D location and orientation (位置和方向) of an object  realtive to the camera frame.</p>
+<p>Before that, we need to define the geometry center of the object.</p>
+<p><img alt="" src="43.png" /></p>
+<ol>
+<li>Find 3D-2D correspondences</li>
+<li>Solve R and t by perspective-n-point (PnP) algorithm</li>
+<li>Find 2D-3D correspondences: detecting keyponts using CNNs</li>
+</ol>
+<h3 id="3-human-pose-estimation">3 Human Pose Estimation<a class="headerlink" href="#3-human-pose-estimation" title="Permanent link">&para;</a></h3>
+<h4 id="markerless-mocap-相机照射关键点标记物在人身体上markless就是不用贴标记物">Markerless MoCap: 相机照射关键点，标记物在人身体上，Markless就是不用贴标记物<a class="headerlink" href="#markerless-mocap-相机照射关键点标记物在人身体上markless就是不用贴标记物" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="44.png" /></p>
+<h4 id="monocular-3d-human-pose-estimation-参数化人体模型">Monocular 3D Human Pose Estimation: 参数化人体模型<a class="headerlink" href="#monocular-3d-human-pose-estimation-参数化人体模型" title="Permanent link">&para;</a></h4>
+<p>Estimating 3D human pose using a single camera</p>
+<p>Using networks to regress joint locations</p>
+<h3 id="4-depth-estimation">4 Depth Estimation<a class="headerlink" href="#4-depth-estimation" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Multiview Depth Estimation: Reconstruct the dense 3D shape from a set of images and camera parameters</p>
+</blockquote>
+<p><img alt="" src="45.png" /></p>
+<p>Learned multi-view stereo</p>
+<p>Cost volume is a 3D array that stores the errors of all pixels at all depths</p>
+<h3 id="5-single-image-to-3d">5 Single Image to 3D<a class="headerlink" href="#5-single-image-to-3d" title="Permanent link">&para;</a></h3>
+<p>• Depth • Point Cloud • Mesh • Volume</p>
+<h4 id="monoculer-depth-estimation">Monoculer depth estimation<a class="headerlink" href="#monoculer-depth-estimation" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Learning to guess depth from large-scale training data</p>
+</blockquote>
+<p><img alt="" src="46.png" /></p>
+<h4 id="single-view-shape-estimation">Single-view shape estimation<a class="headerlink" href="#single-view-shape-estimation" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="47.png" /></p>
+<p>除了点云，mesh等方法也可应用。</p>
+<h3 id="6-pointnet">6 PointNet<a class="headerlink" href="#6-pointnet" title="Permanent link">&para;</a></h3>
+<p>把点云放进神经网络，以前的神经网络都是光栅化的</p>
+<p>挑战1：点顺序不确定——最后再做pooling</p>
+<p>挑战2：位置变化不确定——估计姿态</p>
+<h2 id="lec-12-computational-photography-i">Lec 12 Computational Photography I<a class="headerlink" href="#lec-12-computational-photography-i" title="Permanent link">&para;</a></h2>
+<h3 id="1-high-dynamic-range-imaging-hdr">1 High Dynamic Range Imaging (HDR)<a class="headerlink" href="#1-high-dynamic-range-imaging-hdr" title="Permanent link">&para;</a></h3>
+<h4 id="exposure曝光">Exposure:曝光<a class="headerlink" href="#exposure曝光" title="Permanent link">&para;</a></h4>
+<p><strong>Exposure = Gain(增益) x Irradiance(光线) x Time(时间)</strong></p>
+<ul>
+<li>Gain is controlled by the ISO </li>
+<li>Irradiance is controlled by the aperture </li>
+<li>Time is controlled by the shutter speed</li>
+</ul>
+<h4 id="dynamic-range">Dynamic Range<a class="headerlink" href="#dynamic-range" title="Permanent link">&para;</a></h4>
+<p>The ratio between the largest and smallest values of a certain quantity.</p>
+<h4 id="hdr">HDR<a class="headerlink" href="#hdr" title="Permanent link">&para;</a></h4>
+<p>亮的地方和暗的地方能同时拍清楚</p>
+<p>实现方法：</p>
+<ul>
+<li>Exposure bracketing: Capture multiple LDR images at different exposures(一次拍很多张)</li>
+<li>Merging: Combine them into a single HDR image(然后合在一起)</li>
+</ul>
+<h4 id="merge">Merge<a class="headerlink" href="#merge" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="48.png" /></p>
+<h4 id="tone-mapping">Tone mapping<a class="headerlink" href="#tone-mapping" title="Permanent link">&para;</a></h4>
+<p>Display the HDR image (12-bit) on a SDR (standard dynamic range, 8-bit) device.</p>
+<blockquote>
+<p>Gamma compression</p>
+</blockquote>
+<p>X → aX<sup>γ</sup>, applied independently on R, G, B intend to keep more details on each parts.</p>
+<ul>
+<li>
+<p>γ &lt; 1:  keep more datails on dart parts</p>
+</li>
+<li>
+<p>γ &gt; 1: keep more datails on light parts</p>
+</li>
+</ul>
+<h3 id="2-deblurring">2 Deblurring<a class="headerlink" href="#2-deblurring" title="Permanent link">&para;</a></h3>
+<h4 id="reason">Reason<a class="headerlink" href="#reason" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Defocus: the subject is not in the depth of view</li>
+<li>Motion blur: moving subjects or unstable camera</li>
+<li>……</li>
+</ul>
+<h4 id="modeling-image-blur">Modeling Image Blur<a class="headerlink" href="#modeling-image-blur" title="Permanent link">&para;</a></h4>
+<p>The blurring process can be described by convolution. H is called blur kernel.</p>
+<p><img alt="" src="49.png" /></p>
+<p>Deblurring = Deconvolution</p>
+<ul>
+<li>NBID: Non-blind image deconvolution, the blur kernel is known.</li>
+<li>BID: Blind image deconvolution, the blur kernel is also unknown.</li>
+</ul>
+<h4 id="nbid">NBID<a class="headerlink" href="#nbid" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="50.png" /></p>
+<ul>
+<li>G: The captured image (known) </li>
+<li>F: Image to be solved (unknown) </li>
+<li>H: Blur kernel (known)</li>
+</ul>
+<p>Inverse Filter: will also amplify noise</p>
+<p><img alt="" src="51.png" /></p>
+<p>Wiener Filter: Suppress high frequency when reverse filtering</p>
+<p><img alt="" src="52.png" /></p>
+<p>Deconvolution by optimization</p>
+<p><img alt="" src="53.png" /></p>
+<p>Deconvolution is ill-posed, these are several sets of solutions have the same MSE.</p>
+<p>Objective function = likelihood function + regular term</p>
+<p><img alt="" src="54.png" /></p>
+<h4 id="bid">BID<a class="headerlink" href="#bid" title="Permanent link">&para;</a></h4>
+<p>Blur kernel is non-negative and sparse.</p>
+<p>Optimized objective function:</p>
+<p><img alt="" src="55.png" /></p>
+<h3 id="3-colorization黑白变彩色">3 Colorization(黑白变彩色)<a class="headerlink" href="#3-colorization黑白变彩色" title="Permanent link">&para;</a></h3>
+<h4 id="sample-based-colorization">Sample-based colorization<a class="headerlink" href="#sample-based-colorization" title="Permanent link">&para;</a></h4>
+<p>把一张照片上的颜色迁移到另一张照片，主要任务是像素匹配</p>
+<h4 id="interactive-colorization">Interactive colorization<a class="headerlink" href="#interactive-colorization" title="Permanent link">&para;</a></h4>
+<p>给出线条大致的颜色(user-guided)</p>
+<p><img alt="" src="56.png" /></p>
+<p><img alt="" src="57.png" /></p>
+<p>Constraint: User-specified colors of brushed pixels keep unchanged</p>
+<h4 id="generative-adversarial-network-gan">Generative Adversarial Network (GAN)<a class="headerlink" href="#generative-adversarial-network-gan" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="58.png" /></p>
+<p>D can be viewed as a loss function to train G：</p>
+<ul>
+<li>Called adversarial loss </li>
+<li>Learned instead of being hand-designed </li>
+<li>Can be applied to any image synthesis tasks</li>
+</ul>
+<h3 id="4-super-resolution">4 Super Resolution<a class="headerlink" href="#4-super-resolution" title="Permanent link">&para;</a></h3>
+<p>Super Resolution using GAN</p>
+<p><img alt="" src="59.png" /></p>
+<h2 id="lec-13-computational-photography-ii">Lec 13 Computational Photography II<a class="headerlink" href="#lec-13-computational-photography-ii" title="Permanent link">&para;</a></h2>
+<h3 id="1-image-based-rendering">1 Image-based Rendering<a class="headerlink" href="#1-image-based-rendering" title="Permanent link">&para;</a></h3>
+<p>Rendering: from 3D models to images</p>
+<p>Image-based: 基于照片进行渲染</p>
+<h4 id="light-fields">Light Fields<a class="headerlink" href="#light-fields" title="Permanent link">&para;</a></h4>
+<p>The plenoptic function (7D) depicts light rays passing through.</p>
+<p><img alt="" src="60.png" /></p>
+<h4 id="multi-plane-image-mpi">Multi-Plane Image (MPI)<a class="headerlink" href="#multi-plane-image-mpi" title="Permanent link">&para;</a></h4>
+<p>A set of front-parallel planes at a fixed range of depths.</p>
+<p>Each plane encodes an RGB color image and an alpha/transparency map α<sub>d</sub>.</p>
+<p><img alt="" src="61.png" /></p>
+<h4 id="nerf">NeRF<a class="headerlink" href="#nerf" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="62.png" /></p>
+<h3 id="2-neural-rendering">2 Neural Rendering<a class="headerlink" href="#2-neural-rendering" title="Permanent link">&para;</a></h3>
+<h4 id="pose-transfer--garment-transfer">Pose Transfer &amp; Garment Transfer<a class="headerlink" href="#pose-transfer--garment-transfer" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Input: Image(s) of a person</p>
+<p>Output: Synthesised images of the persion in different poses (Pose Transfer),  or with different clothing (Garment Transfer).</p>
+</blockquote>
+<p>Method:</p>
+<ul>
+<li>Use parametric mesh (SMPL) to represent body pose and shape </li>
+<li>Use high-dimensional UV texture map to encode appearance </li>
+<li>Transfer the pose and appearance</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      本页面的全部内容在 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh">CC BY-SA 4.0</a> 和 <a href="https://github.com/zTrix/sata-license">SATA</a> 协议之条款下提供，附加条款亦可能应用。
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "content.code.annotate", "navigation.tracking", "navigation.indexes", "navigation.top", "toc.follow"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      
+        <script src="../../from_oi_wiki/js/extra.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+    
+  </body>
+</html>
